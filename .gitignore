@@ -1,0 +1,9 @@
+RELIC-INFO
+relic/
+build/
+dist/
+*.pyc
+*.o
+*.so
+*.egg-info
+*.swp
