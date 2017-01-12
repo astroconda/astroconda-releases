@@ -1,6 +1,6 @@
 **This repository is used for preparing and recording deliveries.**
 
-The release notes for each build are tracked and stored with the astroconda spec build which recreates the environment that was delivered
+The release notes for each build are tracked and stored with the AstroConda environment spec file used to recreate environments delivered to various pipeline teams.
 
 
 ## Installing a fresh pipeline environment
@@ -16,12 +16,12 @@ The release notes for each build are tracked and stored with the astroconda spec
 
 A fresh installation of Miniconda3 is not required for each release. The method described here allows multiple, entirely segregated pipeline installations:
 
-For existing Miniconda3 installations:
+Installing from our servers:
 ```
-$ conda create -n %NAME_%YEAR_%BUILD --file http://ssb.stsci.edu/conda/%NAME-%YEAR.$BUILD/%NAME-%YEAR.%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
+$ conda create -n %NAME_%YEAR_%BUILD --file http://ssb.stsci.edu/astroconda-releases/%NAME/%BUILD/%NAME-%YEAR.%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
 ```
 
-As bug fixes are announced, your pipeline software may be updated by issuing the command:
+Installing from this directory:
 ```
-    $ conda update --file http://ssb.stsci.edu/conda/%NAME-%YEAR.$BUILD/%NAME-%YEAR.%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
+TODO
 ```
