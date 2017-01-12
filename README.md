@@ -23,5 +23,5 @@ $ conda create -n %NAME_%YEAR_%BUILD --file http://ssb.stsci.edu/astroconda-rele
 
 Installing from this directory:
 ```
-TODO
+$ conda create -n %NAME_%YEAR_%BUILD --file %NAME/%BUILD/%NAME-%YEAR.%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
 ```
