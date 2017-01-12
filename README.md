@@ -18,10 +18,10 @@ A fresh installation of Miniconda3 is not required for each release. The method 
 
 Installing from our servers:
 ```
-$ conda create -n %NAME_%YEAR_%BUILD --file http://ssb.stsci.edu/astroconda-releases/%NAME/%BUILD/%NAME-%YEAR.%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
+$ conda create -n %NAME_%BUILD --file http://ssb.stsci.edu/astroconda-releases/%NAME/%BUILD/%NAME%-BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
 ```
 
 Installing from this directory:
 ```
-$ conda create -n %NAME_%YEAR_%BUILD --file %NAME/%BUILD/%NAME-%YEAR.%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
+$ conda create -n %NAME_%BUILD --file %NAME/%BUILD/%NAME-%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
 ```
