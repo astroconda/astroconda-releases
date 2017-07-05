@@ -2,7 +2,30 @@ acstools 2.0.7
 ==============
 * Minor fix for compatibility with Numpy 1.12 or later.
 
+calcos 3.2.1
+============
+- Updated code to be compatible with latest version of astropy and numpy
+    - Replaced astropy.io.fits new_table() calls with BinTableHDU.from_columns()
+    - Checked that numpy indices are integers
 
+- Added DGEOCORR step
+    - Applies delta geometric correction
+    - Uses new DGEOFILE reference file
+    - Requires DGEOCORR header keyword
+
+- Added XWLKCORR and YWLKCORR steps, removed WALKCORR step
+    - Applies X and Y walk corrections separately, using a lookup table reference file instead
+      of a polynomial calculation
+    - Uses XWLKFILE and YWLKFILE reference files
+    - Requires XWLKCORR and YWLKCORR header keywords
+    - WALKCORR and WALKTAB keywords now obsolete
+
+- Added capability to set N_SIGMA for wavelength calibration in wcptab reference file
+    - wcptab reference file has new column N_SIGMA
+
+- Fixed bug in DQ calculation when twozone extraction is used
+    - Affected ends of the spectrum when multiple fp-pos positions used
+    
 crds 7.1.1
 ===========
 * JWST B7.1 first quarter, HSTDP-2017.2, new HST + JWST types
