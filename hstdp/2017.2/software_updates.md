@@ -30,7 +30,7 @@ crds 7.1.1
 ===========
 * JWST B7.1 first quarter, HSTDP-2017.2, new HST + JWST types
 
-drizzlepac 2.1.14
+drizzlepac 2.1.17
 =================
 * Supressing aggravating astropy.wcs INFO messages
 
