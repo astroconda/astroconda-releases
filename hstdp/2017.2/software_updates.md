@@ -1,22 +1,37 @@
-acstools 2.0.7
+acstools 2.0.8
 ==============
 * Minor fix for compatibility with Numpy 1.12 or later.
 
+calcos 3.2.1
+============
+
+* New dgeocorr step, with dgeofile reference file
+* Changed x and y walk xcorrection so they use the same event coords and then the overall correction applied after both X and Y corrections calculated.  Also made correction only happen in active area, as xywalk 
+* Add check to make sure CALCOS doesn't run if `DGEOCORR=PERFORM` and `GEOCORR=OMIT`
+* Astropy `new_table` deprecation fix
+* Fixed array indices to make them all integers to avoid numpy deprecation warnings and upcoming exceptions
+* Changed default description for `XWLKFILE/YWLKFILE` reference files to match _PR#86892_
+* Exit if any input files contain either `WALKCORR` or `WALKTAB` keywords in the primary headers
+* Updated `FILETYPE` text for `X` and `Y` walk reference files, and dgeofile
+* Allow reading `N_SIGMA` from the wcptab file, if it's there
+* Made the DQ value outside the shifted `DQ` array equal to `128` instead of `0`
+* Put the getting of table row from wcptab in the try/except block as wavecals don't have a wcptab
+* Insert omitted commit, makes sure wavecals will have a wcptab.  Will now error if no wcptab, as it SHOULD be there.
 
 crds 7.1.1
-===========
+==========
 * JWST B7.1 first quarter, HSTDP-2017.2, new HST + JWST types
 
-drizzlepac 2.1.14
+drizzlepac 2.1.17
 =================
 * Supressing aggravating astropy.wcs INFO messages
 
-fitsblender 0.3.1.dev2
-======================
+fitsblender 0.3.2
+=================
 * bugfix release
 
-HSTCAL 1.2.0rc2
-===============
+HSTCAL 1.2.0
+============
 The following updates, specified in separate sections for each instrument,  have been included with this release.
 
 ## HSTCAL package updates
@@ -99,28 +114,27 @@ reftools 1.7.4
 ==============
 * bugfix release
 
-stsci.tools 3.4.9
-=================
+stsci.tools 3.4.11
+==================
 * Multiple compatibility improvements
 
-stsci.convolve-2.2.1.dev0
-=========================
+stsci.convolve-2.2.1
+====================
 * bugfix release
 
 
 Additional software included in this update
 ===========================================
-* calcos 3.2.1
 * nictools 1.1.3
 * stistools 1.1
-* stsci.distutils-0.3.8.dev0
-* stsci.image-2.2.0.dev0
-* stsci.imagemanip-1.1.2.dev0
-* stsci.imagestats-1.4.1.dev0
-* stsci.ndimage-0.10.1.dev0
-* stsci.numdisplay-1.6.1.dev0
-* stsci.skypac-0.9.4.dev0
-* stsci.sphere-0.2.dev0
-* stsci.sphinxext-1.2.2.dev0
-* stsci.stimage-0.2.1.dev0
-* stwcs 1.3.2rc1
+* stsci.distutils-0.3.8
+* stsci.image-2.2.0
+* stsci.imagemanip-1.1.2
+* stsci.imagestats-1.4.1
+* stsci.ndimage-0.10.1
+* stsci.numdisplay-1.6.1
+* stsci.skypac-0.9.4
+* stsci.sphere-0.2
+* stsci.sphinxext-1.2.2
+* stsci.stimage-0.2.1
+* stwcs 1.3.2
