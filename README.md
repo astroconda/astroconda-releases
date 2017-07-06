@@ -12,16 +12,17 @@ The release notes for each build are tracked and stored with the AstroConda envi
     $ export PATH=$HOME/miniconda3/bin:$PATH
 ```
 
+- Installing via our servers:
+```
+$ conda create -n %NAME_%BUILD --file http://ssb.stsci.edu/releases/%NAME/%BUILD/%NAME%-BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
+```
+
+- Installing via local filesystem:
+```
+$ git clone https://github.com/astroconda/astroconda-releases
+$ conda create -n %NAME_%BUILD --file astroconda-releases/%NAME/%BUILD/%NAME-%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
+```
+
 ## Note
 
 A fresh installation of Miniconda3 is not required for each release. The method described here allows multiple, entirely segregated pipeline installations:
-
-Installing from our servers:
-```
-$ conda create -n %NAME_%BUILD --file http://ssb.stsci.edu/astroconda-releases/%NAME/%BUILD/%NAME%-BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
-```
-
-Installing from this directory:
-```
-$ conda create -n %NAME_%BUILD --file %NAME/%BUILD/%NAME-%BUILD-%PLATFORM-%PYTHON_VERSION.%ITERATION.txt
-```
