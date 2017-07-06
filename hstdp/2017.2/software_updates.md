@@ -118,7 +118,7 @@ stsci.tools 3.4.11
 ==================
 * Multiple compatibility improvements
 
-stsci.convolve-2.2.1
+stsci.convolve 2.2.1
 ====================
 * bugfix release
 
