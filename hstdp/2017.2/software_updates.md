@@ -5,18 +5,27 @@ acstools 2.0.8
 calcos 3.2.1
 ============
 
-* New dgeocorr step, with dgeofile reference file
-* Changed x and y walk xcorrection so they use the same event coords and then the overall correction applied after both X and Y corrections calculated.  Also made correction only happen in active area, as xywalk 
-* Add check to make sure CALCOS doesn't run if `DGEOCORR=PERFORM` and `GEOCORR=OMIT`
-* Astropy `new_table` deprecation fix
-* Fixed array indices to make them all integers to avoid numpy deprecation warnings and upcoming exceptions
-* Changed default description for `XWLKFILE/YWLKFILE` reference files to match _PR#86892_
-* Exit if any input files contain either `WALKCORR` or `WALKTAB` keywords in the primary headers
-* Updated `FILETYPE` text for `X` and `Y` walk reference files, and dgeofile
-* Allow reading `N_SIGMA` from the wcptab file, if it's there
-* Made the DQ value outside the shifted `DQ` array equal to `128` instead of `0`
-* Put the getting of table row from wcptab in the try/except block as wavecals don't have a wcptab
-* Insert omitted commit, makes sure wavecals will have a wcptab.  Will now error if no wcptab, as it SHOULD be there.
+- Updated code to be compatible with latest version of astropy and numpy
+    - Replaced astropy.io.fits new_table() calls with BinTableHDU.from_columns()
+    - Checked that numpy indices are integers
+
+- Added DGEOCORR step
+    - Applies delta geometric correction
+    - Uses new DGEOFILE reference file
+    - Requires DGEOCORR header keyword
+
+- Added XWLKCORR and YWLKCORR steps, removed WALKCORR step
+    - Applies X and Y walk corrections separately, using a lookup table reference file instead
+      of a polynomial calculation
+    - Uses XWLKFILE and YWLKFILE reference files
+    - Requires XWLKCORR and YWLKCORR header keywords
+    - WALKCORR and WALKTAB keywords now obsolete
+
+- Added capability to set N_SIGMA for wavelength calibration in wcptab reference file
+    - wcptab reference file has new column N_SIGMA
+
+- Fixed bug in DQ calculation when twozone extraction is used
+    - Affected ends of the spectrum when multiple fp-pos positions used
 
 crds 7.1.1
 ==========
