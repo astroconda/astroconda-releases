@@ -25,4 +25,4 @@ $ conda create -n %NAME_%BUILD --file astroconda-releases/%NAME/%BUILD/%NAME-%BU
 
 ## Note
 
-A fresh installation of Miniconda3 is not required for each release. The method described here allows multiple, entirely segregated pipeline installations:
+A fresh installation of Miniconda3 is not required for each release. The method described above allows for multiple, entirely segregated pipeline installations.
