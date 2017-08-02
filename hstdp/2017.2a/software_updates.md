@@ -1,8 +1,4 @@
-HSTCAL 1.3.0rc2
-===============
-The following updates, specified in separate sections for each instrument,  have been included with this release.
-
-# HSTCAL Version 1.3.0rc2
+# HSTCAL Version 1.3.0
 
 The following updates have been included with this release.
 
@@ -26,19 +22,18 @@ The following updates have been included with this release.
  * Due to the quick succession of this release from [1.2.0](https://github.com/spacetelescope/hstcal/tree/1.2.0), please refer to the following [release notes](https://github.com/spacetelescope/hstcal/releases/tag/1.2.0) for other recent updates.
 
 
-Additional software included in this update
-===========================================
-* calcos 3.2.1
+# Additional software included in this update
+
 * nictools 1.1.3
 * stistools 1.1
-* stsci.distutils-0.3.8.dev0
-* stsci.image-2.2.0.dev0
-* stsci.imagemanip-1.1.2.dev0
-* stsci.imagestats-1.4.1.dev0
-* stsci.ndimage-0.10.1.dev0
-* stsci.numdisplay-1.6.1.dev0
-* stsci.skypac-0.9.4.dev0
-* stsci.sphere-0.2.dev0
-* stsci.sphinxext-1.2.2.dev0
-* stsci.stimage-0.2.1.dev0
-* stwcs 1.3.2rc1
+* stsci.distutils-0.3.8
+* stsci.image-2.2.0
+* stsci.imagemanip-1.1.2
+* stsci.imagestats-1.4.1
+* stsci.ndimage-0.10.1
+* stsci.numdisplay-1.6.1
+* stsci.skypac-0.9.4
+* stsci.sphere-0.2
+* stsci.sphinxext-1.2.2
+* stsci.stimage-0.2.1
+* stwcs 1.3.2
