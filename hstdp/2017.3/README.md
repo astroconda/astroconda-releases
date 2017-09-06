@@ -5,20 +5,13 @@ A fresh installation of Anaconda3 or Miniconda3 is not required for each HSTDP r
 For existing Anaconda3 or Miniconda3 installations:
 
 ```
-$ conda create -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp-2017.3/dev/hstdp-2017.3-linux-py35.0.txt
+$ conda create -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp/2017.3/latest-linux
 ```
 
-As bugfixes are announced your existing pipeline software may be updated by issuing the command:
+As bugfixes are announced your current pipeline software may be updated by issuing the command:
 
 ```
-$ conda update -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp-2017.3/dev/hstdp/2017.3-linux-py35.%ITERATION.txt
-```
-
-Where `%ITERATION` is the next incremental version of the environment specification file served from that URL.
-For example, this release's next bugfix update procedure would be:
-
-```
-$ conda update -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp/2017.3/dev/hstdp-2017.3-linux-py35.1.txt
+$ conda update -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp/2017.3/latest-linux
 ```
 
 # Installing From Scratch
@@ -44,7 +37,7 @@ $ export PATH=$HOME/miniconda3/bin:$PATH
 ## Install the pipeline
 
 ```
-$ conda create -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp/2017.3/dev/hstdp-2017.3-linux-py35.0.txt
+$ conda create -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp/2017.3/latest-linux
 ```
 
 ## Enter a BASH shell
