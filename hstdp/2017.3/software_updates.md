@@ -1,0 +1,204 @@
+# CRDS 7.1.5 (Development Status)
+
+- Updated git hash for 7.1.5 release.
+- Added self.args.update\_pickle to crds.bestrefs as a condition for recording bestrefs errors as "updates" anyway so that they're available for regressions.
+- Added support for JWST P\_READPA pattern keyword.
+- Bugfix crds.io.factory, geis:  missing \_\_future\_\_ absolute\_import Tweak  crds.io.abstract: bad value enumeration regex wartning vs. error Unit test performance:  crds.bestrefs --affected-datasets smoke test Doctest tweaks:  use of -ignore- in test\_certify,  Python-2 vs. 3, excessive detail text
+- Pylinting.  One typo bugfix for selectors simple value substitutions.
+- Updated unit tests for ASDF warnings.
+- Updated unit tests.
+- Updated system crdscfg from latest cal code.
+- Updated checksum in nirpsec\_wavecorr.rmap spec.
+- Updated text description for NIRSPEC WAVECORR.
+- Restored test\_bestrefs dt\_bestrefs\_dataset\_only\_ids() test case.
+- Modified crds.core.selectors to make the overlapping match case warning for JWST non-verbose since for JWST by default it will result in a runtime error.  For HST,  it's still verbose,  because there are many bad rmaps. Changed terminology from "raise\_ambiguous" (overlapping matches detected at runtime are exceptions to "merge\_overlaps" (explains consequences of allowing overlapping cases:  dynamic merging of selector data.)
+- Modified handling of raise\_ambigiuous in crds.core.selectors so that rmap validation for JWST will issue warnings when match cases overlap. HST on the other hand will retain the current verbose\_warning() approach since it has so many known overlaps.
+- Switched JWST pipeline module reference location warning to a normal try/except so that it doesn't capture the --debug-traps tracebacks with expected exceptions. Modified jwst.locate.filekind\_to\_keyword() to handle missing schema coverage by returning the filekind name instead.
+- More optimization for rmap selector substitutions,  comments for related methods.
+- Optimized rmap selector substitutions code.
+- Initial rewrite of rmap selector substitutions code to add default substitutions for SUBARRAY=GENERIC as well as general capability. This makes explicit rmap header updates for GENERIC unnecessary, a common omission.
+- Refactored Selector.do\_substitutions()
+- Made dictionary copy of DEFAULT\_SUBSTITUTIONS to avoid cross-talk between rmaps.
+- Created "default" rmap substitutions for SUBARRAY=GENERIC --> N/A since it's fairly common to forget the explicit subsitution block in the rmap header that is currently required.  This applies to HST as well.
+- Added a bestrefs regression canary test to prove it will detect mismatches between current bestrefs and stored .json results. Fixed crds.list doctest reference to specific file path.
+- Added caching to utils.get\_object() saving about 10-15% of COS regression total runtime.
+- Made crds.list output more deterministic Tweaked crds.list doctests.
+- More crds.list test coverage.
+- Bugfix in test-related clear\_crds\_state(). Bugfix in crds.list --references --cat Added basic unit test coverage for crds.list
+- Refactored is\_writable() to better isolate possible multiprocessing failures in one of the os calls.
+- Added baseline NIRSPEC WAVECORR typespec.
+- Migrated crds.checksum tool to standard CRDS command line tool format, enabling debugging flawed typespecs that wont even checksum.
+- Regenerated jwst\_system\_crdscfg\_b7.1.yaml after adding new EXP\_TYPE to .cfg mappings.
+- Added missing EXP\_TYPE values to jwst\_system\_crdscfg\_b7.1.yaml
+- Added crds.misc.cal\_pipelines module to provide project independent API to SDP for determining nominal .cfg's from EXP\_TYPE.  Not implemented for HST.
+- Added NIRCAM SPECWCS rmap/spec.
+- One last overhaul of jwst.pipeline to add header\_to\_pipelines(). Inverted parameter order of header\_to\_retypes() mimicking header\_to\_pipelines() to enable defaulting context.
+- Modified JWTS pipeline module to use either B7 or B7.1 default SYSTEM CRDSCFG files in case never delivered as reference.
+- Added translation for CALIBRATION\_SOFTWARE\_VERSION to CAL\_VER, META.CALIBRATION\_SOFTWARE\_VERSION.
+- Modified bestrefs to simplify ID output for unassociated exposures of the form <id:id> to <id>.  This is mainly for JWST and only affects bestrefs error log output.
+- Changed regex for s/w versions to account for trailing noise which is ignored. Switched "using default SYSTEM CRDSCFG" verbose warning to normal warning. Adjusted jwst\_system\_crdscfg\_b7.yaml header parameters to make it submissible. Updated opaque\_asd.tmp to a more current file to avoid ASDF version warnings.
+- Added sorting to jwst.pipeline .cfg lists for better diffs between versions.
+- Added log output to SYSTEM CRDSCFG interpretation methods to show what reference types were identified and from which exp\_type and reference file.
+- Updated SYSTEM CRDSCFG baseline reference for b7.1 Tweaked manual/automatic generation string used to break apart old reference during regeneration.
+- Regenerated default SYSTEM CRDSCFG reference from JWST cal code 0.7.0. Modified pipeline.py to operate based on loaded YAML only, no more computations.
+- Relocated initial B7 system\_crdscfg default reference.
+- Preliminary rewrite of SYSTEM CRDSCFG reference file format.
+- Added Howard's comments for B7.1 support for SYSTEM CRDSCFG generation.
+- Changed crds sync warning for rejected/backlisted files to verbose since full caches will include bad files.
+- unit test update for change in default classes.
+- Updated unit tests for change in JWST default class structure.
+- Updated nirspec .tpn's to reflect new definitions that enable GENERIC to be a non-full-frame image.
+- Removed PUPIL as nircam specific constraint.
+- Added CENWAVE=1223 to COS per Jira REDCAT-33.
+- Added certification check for rmap selectors,  class\_list length must match parkey length, practically speaking detects missing USEAFTER structure due to missing "classes" field now relevant due to change in default JWST class structure.
+- Improved exception message for rmap update reference file insertion exceptions, in this case because of a mismatch between parkey and classes.
+- Improved context resolution in cmdline in several ways. Changed USEAFTER\_DATE to USEAFTER in wfpc2 .tpns, not \_ld.tpns. Polished "crds list --cat". Changed a number of opaque certification file test cases from symlinks to actual files.
+- Overhauled "crds list --cat" to make better use of references and mappings implied by contexts as well as explicitly listed files.  This is a precursor to more polymorphic listing by filetype.
+- Added better exception handling to remote context push and list functions used to track and display actual pipeline contexts.
+- Changed default rmap structure for JWST to include UseAfter making the heretofore required "classes" rmap header field now optional.
+- Moved crds.tables module to crds.io.tables and adjusted module imports and unit tests accordingly.
+- Moved crds.tables module into crds.io package and refactored unit tests and module imports.
+- Improvements to factory.get\_filetype(),  particularly GEIS vs. FITS discrimination for opaque temporary files.
+- Added additional file types (.yaml) to installed data files from observatory packages.
+- Cleaned up JWST translations of the former REFFILE datamodels paths since the REFFILE tier was eliminated from the generic referencefile schema.
+- Modified config.filetype() to treat .xNd as GEIS as well as .xNh.
+- I/O refactoring to clean up "keyword cross-strapping" developed for JWST to enable manually configured or automatically scraped keyword equivalences between cal code datamodels paths and FITS or other physical keywords.  This approach moves custom JWST code out of the abstract I/O module and lines up manual configuration against the possibility that JWST datamodels integration becomes difficult to maintain at some point.  Several misc. pylint cleanups.
+- Multiple fixes for new pipeline refactoring: Modified pipeline module to define CAL\_VER using installed JWST code if it is not defined in the incoming parameter set. Modified cal\_ver version regex to support build suffix, e.g. 1.2.3.dev456 Modified VersionAfterSelector to truncate versions at 1.2.3 Modified pipeline to fix rmap.get\_best\_ref typo for identifying system crdscfg. Added system crdscfg reference file fetch to crds.jwst.pipeline. Added system crdscfg reference file location/path to crds.jwst.pipeline.
+- More crds.jwst.pipeline refactoring: Factored reference file generation code out of runtime pipeline module. Switched to using default YAML taken from prototype reference file.
+- Factored prototype reference file text out of JWST pipeline module into a true reference file.  Added type specification for system crdscfg (originally planned as system calcfg).  Added baseline reference. Added additional `context` parameter to header\_to\_reftypes() hook function required to define the context used to identify system\_crdscfg reference.  Updated unit tests.
+- Bugfix (shaky) for VersionAfterSelector.match\_item() single parameter case, return version as string not list split on "."
+- Modified parkey for system\_crdscfg.rmap spec file.
+- Added baseline spec for system\_crdscfg used to define required reftypes for JWST based on context, calver, and exp\_type.
+- Added some unit test cases to jwst.pipeline to help verify behavior after refactoring to reference file based configuration.
+- Fix for is\_simple\_mapping() when called with loaded mapping object.
+- Revised JWST .tpns redistributing some constraints back to instrument-specific checking.
+- Fixed typo in crds\_cache\_locking that broke acquisition logging (but not acquisition).  Refactored logging for CRDS\_READONLY\_CACHE=1 case of cache locking.
+- Fixed typo in crds\_cache\_locking that broke acquire logging. Added logging for CRDS\_READONLY\_CACHE=True cach locking case.
+- Added --profile switch to runtests for profiling unit tests.
+- Docs tweak.
+- Added documentation for CRDS Cache locking, as well as a basic description of reference file conventions and matching pattern specification.
+- Eliminated redundant io keyword cross-strap equivalence tuples for the null case of (keyword, keyword).
+- Switched back to hard coded \_\_version\_\_ since the pkg\_resources version conflicts with the CRDS server version number obscuring the client version.
+- Updated version info for development.
+- Updated git hash for 7.1.4
+- Modified CRDS \_\_version\_\_ to use version from setup.py via pkg\_resources module.
+- Updated certify truncation doctest.
+- Untested changes to .travis.yaml eliminating astroconda channel and simplifying package pinning. Untested change to ./runtests return status.
+- Added more ellipsis to certify invalid.asdf doctest. Added P\_GRATING as JWST pattern keyword.
+- Typo
+- Added astroconda back in.
+- Removed astroconda from Travis CI.
+- Tweak to test\_certify ellipsis
+- Added lockfile as required dependency.
+- Moved default lock path to /tmp if it exists. Created/updated CrdsLockFile and CrdsFakeLockFile classes, overriding acquire() and release() instead of \_\_enter\_\_() and \_\_exit\_\_(). Overhauled get\_cache\_lock() to handle various cases where locking is disabled. Added locking status to crds list --status Added --clear-locks to crds.sync,  can also be used to init locks directory.
+- Added CRDS\_USE\_LOCKING env var to turn off w/o readonly cache. Changed default lock filename to crds.cache.lock (dropped hidden ".")
+- Created CrdsCacheLock subclass of lockfile.LockFile to add logging for acquire and release. Refined get\_cache\_lock()'s handling of: 1. lockfile import failed 2. CRDS cache is readonly 3. Lock creation failed.
+- Deferred lockfile import warning until actual call to get\_cache\_lock().
+- Moved default cache lock directory to root CRDS cache config directory. Changed config approach to specify lock file paths only to support multiple locks. Added config.get\_crds\_root\_cfgpath() and config.get\_crds\_lockpath(lock\_filename). Added clear\_cache\_lock() Modified utils.remove() to support removing cache lock files.
+- Updated doctests for removing REFFILE provenance
+- Redefined JWST provenance keywords based on new datamodels schemas to avoid redundant META.REFFILE log output.
+- Dropped locking "import" unit test. Added conda list to Travis test output.
+- Doctests,  thrashing obviously.
+- More doctest fixes.
+- Fix for crds\_cache\_locking doctest, restores prior verbosity.
+- Added lockfile as a dependency for .travis.yml Added basic crds\_cache\_locking doctest,  mainly to detect missing lockfile package.
+- Updated version # in setup.cfg,  inconsistent with setup.py since 7.1.1 Added related comment to crds/\_\_init\_\_.py Added comments about CRDS softer dependencies to setup.py
+- Added CRDS\_CACHE\_LOCK env var for defining CRDS cache lock filepath. Added crds.core.crds\_cache\_locking to importable modules from crds package. Cleaned up verbose warnings for cache locking failures.
+- Fixed invalid.asdf unit test.
+- Added crds\_cache\_locking.py to wrap lockfile.
+- Fix for unit test broken by new datasets with COS LIFE\_ADJ=4 running on contexts that did not support that.
+- Trapped HST instrument directory symlink creation with a verbose warning after seeing it fail for crds sync --output=blah
+- Fix for python23 StringIO management.
+- Fixed reftypes unit test for new NIRISS types.
+- Added JWST MIRI versions of PERSAT, TRAPDENSITY, and TRAPPARS omitted from jira-crds-114,115,116 due to no available references.
+- Baseline specs for JWST NIR insturment TRAPPARS types, jira-crds-116.
+- Baseline specs for new JWST NIR TRAPDENSITY type, jira-crds-115.
+- Baseline specs for new NIR instrument PERSAT types.  jira-crds-114.
+- Added \_\_hash\_\_() to DiffTuple in selectors.py as required by Python-3 (tuple?) subclasses that also define \_\_eq\_\_().
+- Fixed invalid.asdf certify doctest new io.fits output. Removed expensive certify sync comparison test.
+- Improved exception handling for mis-configured CRDS,  e.g. attempting JWST ops with CRDS\_SERVER\_URL configured for HST.
+- Modified checksum tool to run mapping parser to detect duplicate match cases prior to rewriting rmaps to prevent silently dropping the duplicates during the checksum update process.  Duplicate cases are errors.
+- Fixes for PEDIGREE, PEDIGREE column checking,  additional tests.
+- Baseline fix for PEDIGREE column values, needs broad testing and specific unit tests.
+- Clarified diff message of Selector class to N/A.
+- Abstracted out .pmap number with ellipsis in test\_or\_bars.py
+- Trapped rowdiff runtime error for inconsistent hdus so header diffs still occur and web display gives gentler indication than traceback.
+- Tested fix for backward/forward compatible file submission upload files info protocol change.
+- Untested backward/forward compatible version of command line file submission file upload info method, broken by recent server upgrade of Django-jQyuery-file-upload package.
+- Fixed doctest pmap version dependency with ellipsis in test\_or\_bars.py
+- Updated valid values for JWST SUBARRAY in all\_all
+- Added N/A and ANY back to NIRSPEC ALL EXP\_TYPE values.
+- More info on CRDS path specification.
+- Updated documentation for certify (and --help) to more explicitly describe using ./ to specify the current working directory instead of implicitly meaning "in the CRDS cache."
+- Updated git hash for initial dev version 7.1.4
+- Bumped development version to 7.1.4
+- Updated 7.1.3 git hash for tagging.
+- Added verbosity=90 log messages to trace how keywords are being cross-strapped via hard coded tables and JWST datamodels inferences.
+- Unit test updates,  added path back into log\_and\_track\_errors output
+- Fixed bug in crds certify log\_and\_track\_error where simplified file specification (only basename) made it impossible to read the file to determine instrument and type.
+- Removed explicit PUPIL definitions from NIRCAM ALL.
+- Added a second stage of header cross strapping after noticing that the P\_ initialized versions of normal keywords were not cross strapped. Made the io.abstract cross strapping function public. Increased verbosity level for missing optional keywords,  mostly noise.
+- Updated unit tests for test\_certify table log message improvements.
+- Improve table mode checking logging in crds.certify.  Removed dead code for all columns.
+- Added missing test\_config.cleanup(old\_state) to test\_certify accidentally deleted during doctest update.
+- Removed test dataset from crds/tests directory to simplify diffs.
+- Updated for NIRSPEC AREA tabular modes. Added is\_imaging\_mode(EXP\_TYPE) validator helper. Added unique\_rowkeys to ('SLIT\_ID', 'SLICE\_ID', 'SHUTTER\_X', 'SHUTTER\_Y', 'QUADRANT'). Switched nirspec\_area.tpn to use nirspec\_sci\_array.tpn instead of nir\_sci\_array.tpn Modified nirspec\_sci\_array.tpn to limit it to imaging modes Added table constraints to nirspec\_aray.tpn for NRS\_IFU,NRS\_MSASPEC, and NRS\_FIXEDSLIT|NRS\_BRIGHTOBJ. Updated JWST reference\_to\_dataset to ensure SUBARRAY and EXP\_TYPE are always defined, if only UNDEFINED. Added cross strapping for META.INSTRUMENT.MODULE.
+- JWST certify helper function bugfix for NIRSPEC FFLAT. Update for unit test related to META.REFFILE -> META. schema refactoring.
+- Updated global JWST constraints to make optional boilerplate metadata required. Updated test data as needed to include HISTORY.
+- Updated \_ld version of nircam\_all.tpn
+- Added JWST P\_ translation for meta.p\_subarray Commented out EXP\_TYPE constraint in nircam\_all.tpn
+- Added additional schema translations to hard code some of the recent reference file schema updates,  including flattening meta.reffile.xxx to meta.xxx.
+- Fixed import sys error in custom\_query\_affected\_datasets\_script
+- Modified query\_affected reprocessing reference/example scripts to return non-zero exit status if client or server side errors occurred.
+- Fixed refactoring issue with command line file submission interpretation of django-file-upload JSON response which changed during the recent jQuery and related package updates.
+- Refactored command line get\_files() method used to support @-files into get\_words() to remove the implicit assumption that every word is a filename.  Updated crds.list accordingly since it was abusing get\_files() to load dataset ids.
+- Modified JWST schema loader to support revised cal code schema layout that nests "type" under "anyOf".
+- Fixed bug in certify .tpn value quoting for COS GSAGTAB.
+- Added crds sync readonly cache info's / soft-warning.
+- Added arg() convenience function to pysh for sls's.
+- Changes to crds.list and dataset header fetching crds.client API.
+- Updated git hash for 7.1.3 again,  following test updates
+- Updated test cases.  Re-added the sort() for P\_ keyword application so that doctest results are deterministic.
+- Updated git hash for 7.1.3
+- Bumped version to 7.1.3 for release.
+- Updated valid SUBARRAY values for JWST based on cal code.
+- Filtered out the import warning related to the complex CRDS \_\_init\_\_ imports.
+- Fix for verbose-with-prefix missing self.
+- Refactored bestrefs to add verbose\_with\_prefix() method to shave off cost of format\_prefix() for multiple verbose() per-dataset log messages.
+- Updated FILETYPE definition for new COS DGEOFILE per Jira CRDS-97.
+- Added a couple more test cases for P\_ pattern or-glob trailing | syntax.
+- Added JSON output format to crds.list --dataset-headers to support running bestrefs and/or grepping headers one-per-line.
+- Added reference\_to\_dataset translation logic and error checking for P\_ pattern keywords for JWST.  HST still has no support. Simplified MIRI .tpn BAND enumerations. Updated unit tests.
+- Modified crds diff (rmap code) to ignore differences in rules files that have the same checksum.  Nominally this occurs in cache-to-cache differences where filepaths are different but mapping contents are the same.
+- Added more bestrefs unit test coverage,  fixed project specific bug with --all-instruments, improved get\_pickled\_mapping to pass pre-loaded mappings like asmapping().
+- Work on or-glob-values containing spaces for readability, particularly with respect to rmap updates and normalized tuple values. Added test\_substitutions module trying to increase test coverage.
+- Baseline refactoring of core CRDS and certifier to support spaces in or-bared match patterns for readability. Updated unit tests for revised Tpn output. Added a test case for or-barred syntax that fails until JWST is updated. Re-ordered application of JWST data models open so that more basic certify checks run first. Rmap updates need more review and consideration: matching with readability spaces,  and rmap updates with same.
+- Updated selectors del\_match\_parameter to handle singleton non-tuple parameter deletions.
+- Unplugged JWST schema scraping for certify enumerations since it is in flux and doesn't work yet with the new reference file specific schema. The data models open check should work now. Updated unit tests.   Added unit tests for dm\_to\_fits() and fits\_to\_dm()
+- Modified certify --dump-provenance to skip keytypes that are not H, i.e. header keywords. Modified JWST keytype=H expression .tpn constraints to keytype=X to avoid dump of UNDEFINED expression labels. pylinted cmdline.py,  updated unit tests for above.
+- Added ANY,N/A to CUBEPAR .tpns
+- Updated git hash and rationale for 7.1.2
+- Updated ACS CTE .tpn due to delay in delivery.
+- Updated additional .tpn files for COS LIFE\_ADJ=4
+- Modified client proxy verbose mode to show RPC results for simple results like strings, numbers, etc.
+- Added generic capability to expand symbolic spec for a type such as jwst-all-photom-operational into the symbolic types for each non-system instrument.   This is useful for re-running the certifier on a type across all instruments.
+- Modified JWST certify handling of PHOTOM based on discussions in #513.
+- Changed setup.py "provides" to just "crds" after PyPi upload failed.
+- Relaxed certify condition on NIRSPEC SATURATION for SCI\_ARRAY type is INT to FLOAT or INT. Extended has\_type helper function to support list of types.
+- Updated HST combined specs for ACS SNKCFILE.
+- Added requirement DETECTOR=WFC to ACS SNKCFILE rmap\_relevance,  otherwise N/A.
+- Adjusted reftypes set combination from difference to intersection.
+- Added certify reftypes unit tests, corrected tpn text dumps.
+- Commented out dev/test code in certify/mapping\_parser.py to prevent spoofing coverage results.
+- First stepping stone to limiting type determination to those contained in the context in use.
+- Removed unique\_rows checks from ACS, WFC3 PCTETAB after discussion on Jira CRDS-103.
+- Updated doctest for data models check due to change in output format.
+- Updated specs and .tpns for MIRI,NIRSPEC CUBEPAR for Jira-CRDS-109, 110
+- Updated ACS PCTETAB spec and tpns based on new format inputs from David Borncamp on Jira CRDS-103.
+- Modified format constraints for WFC3 and ACS CTE references based on existing WFC3 and example ACS CTE file from David Borncamp. Removed unique rows check for ACS PCTETAB since columns changed and new unique parameters are still undefined.
+- Optimized verbose output in validators.py,  mainly for column checks.
+- Bumped development version to 7.1.2
+
+# Additional software included in this update
+
+* None
