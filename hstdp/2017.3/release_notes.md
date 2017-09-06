@@ -1,6 +1,4 @@
-# This 2017.3 HSTDP release is based on Anaconda/Miniconda, Python 3.5
-
-## Perform the following steps in your terminal to install the release:
+# 2017.3
 
 For existing Anaconda3 or Miniconda3 installations:
 
