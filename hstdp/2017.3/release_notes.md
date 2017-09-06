@@ -3,13 +3,13 @@
 For existing Anaconda3 or Miniconda3 installations:
 
 ```
-$ conda create -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp-2017.3/dev/hstdp-2017.3-linux-py35.0.txt
+$ conda create -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp/2017.3/dev/hstdp-2017.3-linux-py35.0.txt
 ```
 
 As bugfixes are announced your existing pipeline software may be updated by issuing the command:
 
 ```
-$ conda update -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp-2017.3/dev/hstdp/2017.3-linux-py35.%ITERATION.txt
+$ conda update -n hstdp-2017.3 --file http://ssb.stsci.edu/releases/hstdp/2017.3/dev/hstdp-2017.3-linux-py35.%ITERATION.txt
 ```
 
 Where `%ITERATION` is the next incremental version of the environment specification file served from that URL.
