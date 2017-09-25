@@ -1,4 +1,4 @@
-# CRDS 7.1.5 (Development Status)
+# CRDS 7.1.5
 
 - Updated git hash for 7.1.5 release.
 - Added self.args.update\_pickle to crds.bestrefs as a condition for recording bestrefs errors as "updates" anyway so that they're available for regressions.
