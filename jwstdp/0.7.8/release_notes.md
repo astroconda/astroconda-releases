@@ -1,5 +1,9 @@
 # Release Notes
 
+- 2017/11/10 - 0.7.8rc8 - Iteration 0
+  - https://github.com/STScI-JWST/jwst/compare/0.7.8rc7...0.7.8rc8
+  - Includes CRDS 7.1.7
+
 - 2017/11/06 - 0.7.8rc7 - Iteration 0
   - https://github.com/STScI-JWST/jwst/compare/0.7.8rc6...0.7.8rc7
   - Includes CRDS 7.1.6
