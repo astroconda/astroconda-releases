@@ -52,4 +52,3 @@ The following updates, specified in separate sections for each instrument,  have
 - stwcs 1.4.0
 - calcos 3.3.4
 - acstools 2.0.10
-
