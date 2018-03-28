@@ -29,7 +29,7 @@ $ export PATH=$HOME/anaconda3/bin:$PATH
 **For Miniconda (if preferred):**
 
 ```
-$ wget https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh
+$ wget https://repo.continuum.io/miniconda/Miniconda3-4.4.10-Linux-x86_64.sh
 $ bash Miniconda3-4.3.31-Linux-x86_64.sh
 $ export PATH=$HOME/miniconda3/bin:$PATH
 ```
