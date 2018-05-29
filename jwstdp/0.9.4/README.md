@@ -5,13 +5,13 @@ A fresh installation of Anaconda3 or Miniconda3 is not required for each JWSTDP 
 For existing Anaconda3 or Miniconda3 installations:
 
 ```
-$ conda create -n jwstdp-0.9.4 --file http://ssb.stsci.edu/releases/jwstdp/0.9.3/latest-linux
+$ conda create -n jwstdp-0.9.4 --file http://ssb.stsci.edu/releases/jwstdp/0.9.4/latest-linux
 ```
 
 As bugfixes are announced your current pipeline software may be updated by issuing the command:
 
 ```
-$ conda update -n jwstdp-0.9.4 --file http://ssb.stsci.edu/releases/jwstdp/0.9.3/latest-linux
+$ conda update -n jwstdp-0.9.4 --file http://ssb.stsci.edu/releases/jwstdp/0.9.4/latest-linux
 ```
 
 # Installing From Scratch
@@ -37,7 +37,7 @@ $ export PATH=$HOME/miniconda3/bin:$PATH
 ## Install the pipeline
 
 ```
-$ conda create -n jwstdp-0.9.4 --file http://ssb.stsci.edu/releases/jwstdp/0.9.3/latest-linux
+$ conda create -n jwstdp-0.9.4 --file http://ssb.stsci.edu/releases/jwstdp/0.9.4/latest-linux
 ```
 
 ## Enter a BASH shell
