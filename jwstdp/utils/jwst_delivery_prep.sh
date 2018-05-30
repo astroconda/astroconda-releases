@@ -9,7 +9,9 @@
 #    (Note: be sure to purge any old spec files that exist in that location
 #     prior to running the build and this script.)
 # 3) Create symlinks to the latest version
-# 3) Generate a README.md 
+# 4) Generate a README.md 
+# 4) Generate a set of instructions to include in the delivery notification
+#    message body.
 #
 # Example usage:
 # jwst_delivery_prep 0.9.4
