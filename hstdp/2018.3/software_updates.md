@@ -1,11 +1,13 @@
 # Updated numpy 1.15 and dependent packages
 
 # Packages obtained from development channel explicitly for inclusion in this delivery
+  ```
   hstcal-2.1.0rc2.dev0+g670d8b5-6
   crds-7.2.5.dev0+gddeb071-py35_3
   reftools-1.7.5.dev0+gefa71b1-py35_2
   acstools-2.1.0.dev0+g9f7fe0f-py35_3
   wfc3tools-1.3.5rc1.dev2+g22b7718-py35_2
+  ```
 
 # HSTCAL Version 2.1.0 
 
