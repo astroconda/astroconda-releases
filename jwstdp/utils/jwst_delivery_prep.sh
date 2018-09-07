@@ -20,8 +20,8 @@
 spec_dir="/eng/ssb/websites/ssbpublic/astroconda-releases-staging/"
 
 # Conda installer versions to suggest in README.md file.
-anaconda_ver="5.1.0"
-miniconda_ver="4.4.10"
+anaconda_ver="5.2.0"
+miniconda_ver="4.5.11"
 
 tagname=$1
 
@@ -67,7 +67,7 @@ For detailed instructions of this step, please visit: http://docs.continuum.io/a
 **For Anaconda:**
 
 \`\`\`
-$ wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+$ wget https://repo.continuum.io/archive/Anaconda3-${anaconda_ver}-Linux-x86_64.sh
 $ bash Anaconda3-${anaconda_ver}-Linux-x86_64.sh
 $ export PATH=\$HOME/anaconda3/bin:\$PATH
 \`\`\`
@@ -75,7 +75,7 @@ $ export PATH=\$HOME/anaconda3/bin:\$PATH
 **For Miniconda (if preferred):**
 
 \`\`\`
-$ wget https://repo.continuum.io/miniconda/Miniconda3-4.4.10-Linux-x86_64.sh
+$ wget https://repo.continuum.io/miniconda/Miniconda3-${miniconda_ver}-Linux-x86_64.sh
 $ bash Miniconda3-${miniconda_ver}-Linux-x86_64.sh
 $ export PATH=\$HOME/miniconda3/bin:\$PATH
 \`\`\`
