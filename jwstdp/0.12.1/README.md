@@ -22,8 +22,8 @@ For detailed instructions of this step, please visit: http://docs.continuum.io/a
 **For Anaconda:**
 
 ```
-$ wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh
-$ bash Anaconda3-5.2.0-Linux-x86_64.sh
+$ wget https://repo.continuum.io/archive/Anaconda3-5.3.0-Linux-x86_64.sh
+$ bash Anaconda3-5.3.0-Linux-x86_64.sh
 $ export PATH=$HOME/anaconda3/bin:$PATH
 ```
 
