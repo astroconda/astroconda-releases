@@ -16,6 +16,10 @@
 # Example usage:
 # jwst_delivery_prep 0.9.4
 
+# Python version name to use as target of '-latest' links.
+# takes the form of py##
+pyver="py36"
+
 # Location of generated delivery environment specification files.
 spec_dir="/eng/ssb/websites/ssbpublic/astroconda-releases-staging/"
 
@@ -33,11 +37,11 @@ mkdir dev
 cp ${spec_dir}/jwstdp* dev
 
 # Create latest linux link
-latest=$(ls -1r dev/*linux*py35* | head -1)
+latest=$(ls -1r dev/*linux*${pyver}* | head -1)
 ln -s ${latest} latest-linux
 
 # Create latest osx link
-latest=$(ls -1r dev/*osx*py35* | head -1)
+latest=$(ls -1r dev/*osx*${pyver}* | head -1)
 ln -s ${latest} latest-osx
 
 
