@@ -104,7 +104,7 @@ https://repo.continuum.io/pkgs/main/osx-64/sphinxcontrib-1.0-py36h9364dc8_1.tar.
 https://repo.continuum.io/pkgs/main/osx-64/sphinxcontrib-websupport-1.0.1-py36h92f4a7a_1.tar.bz2
 https://repo.continuum.io/pkgs/main/osx-64/sqlite-3.22.0-h3efe00b_0.tar.bz2
 http://ssb.stsci.edu/astroconda/osx-64/stistools-1.1-py36_1.tar.bz2
-http://ssb.stsci.edu/astroconda/osx-64/stsci-hst-3.0.1-0.tar.bz2
+http://ssb.stsci.edu/astroconda/osx-64/stsci-hst-3.0.2-py36_0.tar.bz2
 http://ssb.stsci.edu/astroconda/osx-64/stsci.convolve-2.2.1-py36_0.tar.bz2
 http://ssb.stsci.edu/astroconda/osx-64/stsci.distutils-0.3.8-py36_1.tar.bz2
 http://ssb.stsci.edu/astroconda/osx-64/stsci.image-2.2.0-py36_1.tar.bz2
