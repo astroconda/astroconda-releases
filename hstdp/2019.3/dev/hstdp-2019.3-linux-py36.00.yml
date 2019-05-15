@@ -1,9 +1,8 @@
 name: hstdp-2019.3-linux-py36.00
 channels:
   - http://ssb.stsci.edu/conda-dev
-  - https://astroconda.org/channel/main
-  - http://ssb.stsci.edu/astroconda
   - defaults
+  - http://ssb.stsci.edu/astroconda
 dependencies:
   - alabaster=0.7.12=py36_0
   - asn1crypto=0.24.0=py36_0
