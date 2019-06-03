@@ -1,5 +1,10 @@
 # Release Notes
 
+* 2019/06/03 - Iteration 3
+  - Updated base environment (drifted out of sync with "defaults" channel)
+  - Update fitsblender (dev version)
+  - Update stsci.skymatch (latest release)
+  - Update stwcs (dev version)
 * 2019/05/15 - Iteration 2
   - Normalize URLs for all channel aliases
 * 2019/05/13 - Iteration 1
