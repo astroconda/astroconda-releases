@@ -24,8 +24,8 @@ pyver="py36"
 spec_dir="/eng/ssb/websites/ssbpublic/astroconda-releases-staging/"
 
 # Conda installer versions to suggest in README.md file.
-anaconda_ver="2018.12"
-miniconda_ver="4.5.12"
+anaconda_ver="2019.03"
+miniconda_ver="4.6.14"
 
 tagname=$1
 
