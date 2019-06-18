@@ -34,7 +34,7 @@ https://repo.anaconda.com/pkgs/main/osx-64/readline-7.0-h1de35cc_5.tar.bz2
 https://repo.anaconda.com/pkgs/main/osx-64/libxslt-1.1.33-h33a18ac_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/osx-64/sqlite-3.28.0-ha441bb4_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/osx-64/unixodbc-2.3.7-h1de35cc_0.tar.bz2
-https://repo.anaconda.com/pkgs/main/osx-64/freetds-1.00.97-ha12b0ac_0.tar.bz2
+http://ssb.stsci.edu/astroconda-dev/osx-64/freetds-1.00.9-0.tar.bz2
 https://repo.anaconda.com/pkgs/main/osx-64/python-3.6.8-haf84260_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/osx-64/appnope-0.1.0-py36hf537a9a_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/osx-64/asn1crypto-0.24.0-py36_0.tar.bz2
