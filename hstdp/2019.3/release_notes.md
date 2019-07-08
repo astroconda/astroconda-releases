@@ -1,5 +1,6 @@
 # Release Notes
 
+* 2019/07/08 - Final
 * 2019/06/03 - Iteration 3
   - Updated base environment (drifted out of sync with "defaults" channel)
   - Update fitsblender (dev version)
