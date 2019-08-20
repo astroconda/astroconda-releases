@@ -1,4 +1,3 @@
-name: hstdp-2019.3-osx-py36.03
 channels:
   - http://ssb.stsci.edu/astroconda
   - defaults
@@ -149,4 +148,3 @@ dependencies:
   - stwcs=1.5.1rc3.dev0+ga6e6a99=py36_2
   - pip:
     - dask==1.2.2
-prefix: /Users/iraf/build/pembry/workspace/Sandbox/delivery_merge/miniconda/envs/hstdp-2019.3-osx-py36.03
