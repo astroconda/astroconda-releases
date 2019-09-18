@@ -1,7 +1,7 @@
 channels:
   - http://ssb.stsci.edu/astroconda
   - defaults
-  - http://ssb.stsci.edu/astroconda-dev
+  - http://ssb.stsci.edu/astroconda-pipeline
 dependencies:
   - alabaster=0.7.12=py36_0
   - asn1crypto=0.24.0=py36_0
