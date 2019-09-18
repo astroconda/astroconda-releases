@@ -1,7 +1,7 @@
 channels:
   - http://ssb.stsci.edu/astroconda
   - defaults
-  - http://ssb.stsci.edu/astroconda-j-pub-staging
+  - http://ssb.stsci.edu/astroconda-pipeline
 dependencies:
   - acstools=3.0.0=py36_0
   - asdf=2.3.3=py36_0

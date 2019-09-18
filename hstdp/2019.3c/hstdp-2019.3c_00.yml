@@ -22,7 +22,7 @@ runtime:
 conda_channels:
   - http://ssb.stsci.edu/astroconda
   - defaults
-  - http://ssb.stsci.edu/astroconda-j-pub-staging
+  - http://ssb.stsci.edu/astroconda-pipeline
 
 conda_requirements:
   - asn1crypto=0.24.0
