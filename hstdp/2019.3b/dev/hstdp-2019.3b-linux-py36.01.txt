@@ -47,8 +47,8 @@ https://ssb.stsci.edu/astroconda-pipeline/linux-64/atomicwrites-1.3.0-py36_1.tar
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/attrs-19.1.0-py36_1.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/certifi-2019.3.9-py36_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/chardet-3.0.4-py36_1.tar.bz2
-https://ssb.stsci.edu/astroconda-pipeline/noarch/cloudpickle-1.0.0-py_0.tar.bz2
-https://ssb.stsci.edu/astroconda-pipeline/noarch/dask-core-1.2.2-py_0.tar.bz2
+https://ssb.stsci.edu/astroconda-pipeline/linux-64/cloudpickle-1.0.0-py_0.tar.bz2
+https://ssb.stsci.edu/astroconda-pipeline/linux-64/dask-core-1.2.2-py_0.tar.bz2
 http://ssb.stsci.edu/astroconda-pipeline/linux-64/dbus-python-1.2.4-py36_1.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/decorator-4.4.0-py36_1.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/entrypoints-0.3-py36_0.tar.bz2
@@ -61,13 +61,13 @@ https://ssb.stsci.edu/astroconda-pipeline/linux-64/more-itertools-7.0.0-py36_0.t
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/numpy-base-1.16.4-py36hde5b4d6_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/olefile-0.46-py36_0.tar.bz2
 http://ssb.stsci.edu/astroconda-pipeline/linux-64/parsley-1.3-py36_1.tar.bz2
-https://ssb.stsci.edu/astroconda-pipeline/noarch/pluggy-0.11.0-py_0.tar.bz2
+https://ssb.stsci.edu/astroconda-pipeline/linux-64/pluggy-0.11.0-py_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/psutil-5.6.2-py36h7b6447c_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/py-1.8.0-py36_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/pycparser-2.19-py36_0.tar.bz2
-https://ssb.stsci.edu/astroconda-pipeline/noarch/pyparsing-2.4.0-py_0.tar.bz2
+https://ssb.stsci.edu/astroconda-pipeline/linux-64/pyparsing-2.4.0-py_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/pysocks-1.7.0-py36_0.tar.bz2
-https://ssb.stsci.edu/astroconda-pipeline/noarch/pytz-2019.1-py_0.tar.bz2
+https://ssb.stsci.edu/astroconda-pipeline/linux-64/pytz-2019.1-py_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/pyyaml-5.1-py36h7b6447c_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/qt-5.9.7-h5867ecd_1.tar.bz2
 https://repo.anaconda.com/pkgs/free/linux-64/semantic_version-2.6.0-py36_0.tar.bz2
@@ -92,7 +92,7 @@ https://ssb.stsci.edu/astroconda-pipeline/linux-64/cryptography-2.6.1-py36h1ba5d
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/cython-0.29.8-py36he6710b0_0.tar.bz2
 http://ssb.stsci.edu/astroconda-pipeline/linux-64/d2to1-0.2.12-py36_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/jsonschema-2.6.0-py36_0.tar.bz2
-https://ssb.stsci.edu/astroconda-pipeline/noarch/networkx-2.3-py_0.tar.bz2
+https://ssb.stsci.edu/astroconda-pipeline/linux-64/networkx-2.3-py_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/nose-1.3.7-py36_2.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/pytest-4.5.0-py36_0.tar.bz2
 https://ssb.stsci.edu/astroconda-pipeline/linux-64/wheel-0.33.4-py36_0.tar.bz2
