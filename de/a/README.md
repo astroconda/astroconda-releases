@@ -34,10 +34,10 @@ $ bash Miniconda3-4.7.10-Linux-x86_64.sh
 $ export PATH=$HOME/miniconda3/bin:$PATH
 ```
 
-## Install the pipeline
+## Install the environment
 
 ```
-$ conda create -n da-5 --file http://ssb.stsci.edu/releases/da/5/latest-linux
+$ conda create -n de-a --file http://ssb.stsci.edu/releases/de/a/latest-linux
 ```
 
 ## Enter a BASH shell
@@ -46,8 +46,8 @@ $ conda create -n da-5 --file http://ssb.stsci.edu/releases/da/5/latest-linux
 $ bash
 ```
 
-## Activate the pipeline environment
+## Activate the environment
 
 ```
-$ source activate da-5
+$ source activate de-a
 ```
