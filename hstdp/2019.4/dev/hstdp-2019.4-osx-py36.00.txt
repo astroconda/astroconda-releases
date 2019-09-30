@@ -33,7 +33,7 @@ https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3c/main/osx-64/pcre-8.43-h0a440
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3c/astroconda/osx-64/fitsverify-4.18-6.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3c/main/osx-64/fontconfig-2.13.0-h5d5b041_1.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3c/main/osx-64/gettext-0.19.8.1-h15daf44_3.tar.bz2
-https://ssb.stsci.edu/astroconda-j-pub-staging/osx-64/hstcal-2.3.0rc1-0.tar.bz2
+https://ssb.stsci.edu/astroconda-j-pub-staging/osx-64/hstcal-2.3.1-0.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3c/main/osx-64/libedit-3.1.20181209-hb402a30_0.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3c/main/osx-64/libxslt-1.1.33-h33a18ac_0.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3c/main/osx-64/readline-7.0-h1de35cc_5.tar.bz2
