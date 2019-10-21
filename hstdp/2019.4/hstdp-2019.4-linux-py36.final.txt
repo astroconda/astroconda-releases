@@ -25,7 +25,7 @@ https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3b/main/linux-64/xz-5.2.4-h14c3
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3b/main/linux-64/yaml-0.1.7-had09818_2.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3b/main/linux-64/zlib-1.2.11-h7b6447c_3.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3b/main/linux-64/glib-2.56.2-hd408876_0.tar.bz2
-https://ssb.stsci.edu/astroconda-j-pub-staging/linux-64/hstcal-2.3.1-0.tar.bz2
+https://ssb.stsci.edu/astroconda/linux-64/hstcal-2.3.1-0.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3b/main/linux-64/libedit-3.1.20181209-hc058e9b_0.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3b/main/linux-64/libpng-1.6.37-hbc83047_0.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.3b/main/linux-64/libxml2-2.9.9-he19cac6_0.tar.bz2
