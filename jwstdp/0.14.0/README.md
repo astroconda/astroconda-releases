@@ -7,7 +7,8 @@ All steps must be performed in bash or a compatible shell.
 
 A fresh installation of Anaconda3 or Miniconda3 is not required for each JWSTDP release. The method described here allows for multiple, entirely segregated, pipeline installations.
 
-To reproduce the environment used during JWST prerelease testing, a three-step installation process is required.
+## Linux
+To reproduce the environment used during JWST prerelease testing on Linux, a three-step installation process is required.
 
 1) Install the target python interpreter and its dependencies using conda, then
 ```
@@ -22,6 +23,22 @@ $ source activate jwstdp-0.14.0
 3) Install the pipeline software packages on top using `pip`:
 ```
 $ pip install -r https://ssb.stsci.edu/releases/jwstdp/0.14.0/reqs_stable-deps.txt
+```
+
+## Macos
+1) Install the target python interpreter and its dependencies using conda, then
+```
+$ conda create -n jwstdp-0.14.0 --file https://ssb.stsci.edu/releases/jwstdp/0.14.0/conda_env_dump_macos-stable-deps.txt
+```
+
+2) Activate the environment
+```
+$ source activate jwstdp-0.14.0
+```
+
+3) Install the pipeline software packages on top using `pip`:
+```
+$ pip install -r https://ssb.stsci.edu/releases/jwstdp/0.14.0/reqs_macos-stable-deps.txt
 ```
 
 # Advance setup
