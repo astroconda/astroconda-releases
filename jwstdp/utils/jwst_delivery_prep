@@ -118,8 +118,8 @@ def main():
             prog='jwst_pipeline_deliver',
             description='Modify regression test environment snapshot artifacts'
             ' to reflect a stable release tag for all supported OSs, compose '
-            'a descriptive readme file, and commit all files to the '
-            'astroconda-releases repository.')
+            'a descriptive readme file, and store delivery files in a new '
+            'release directory within the repository holding this script.')
     ap.add_argument('--tag',
                     '-t',
                     type=str,
