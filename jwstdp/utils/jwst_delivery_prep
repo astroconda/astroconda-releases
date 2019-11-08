@@ -13,8 +13,11 @@ import subprocess as sp
 from urllib import request
 import re
 
-
+# TODO: Take from config file.
 artifact_prefixes = ['conda_python_', 'reqs_']
+art_url_base = 'https://bytesalad.stsci.edu/artifactory'
+art_repo = 'jwst-pipeline-results'
+
 
 def modify_dep(line, text):
     '''Replace value appearing after the last '@' in the pip
@@ -150,9 +153,6 @@ def main():
  
     config_map = {'Linux':'',
                   'Macos':''}
-    # TODO: Take from config file.
-    art_url_base = 'https://bytesalad.stsci.edu/artifactory'
-    art_repo = 'jwst-pipeline-results'
 
     artifacts = get_artifact_names(f'{art_url_base}/{art_repo}')
  
