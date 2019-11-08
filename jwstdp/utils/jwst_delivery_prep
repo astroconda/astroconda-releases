@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+
+# Collects environment snapshot files from the internal artifactory instance
+# at https://bytesalad.stsci.edu for a successful JWST regression test (RT)
+# run, and stores them in a new release directory in a clone of the releases
+# repository along with a descriptive README file as part of a JWSTDP
+# environment delivery process.
+
+import os
+import sys
+import argparse
+import subprocess as sp
+from urllib import request
+import re
+
+
+artifact_prefixes = ['conda_python_', 'reqs_']
+
+def modify_dep(line, text):
+    '''Replace value appearing after the last '@' in the pip
+    spec line for the 'jwst' package with the provided text.'''
+    line = line.strip()
+    # Determine type of pip dependency spec
+    if line[0:2] == '-e':
+        print('editable install dependency spec')
+    if line[0:4] == 'jwst':
+        delim = line.rfind('@')
+        line = line[:delim+1]
+        line = line + text
+    return(line)
+
+
+def get_artifact_names(url):
+    '''Retrieve list of all available artifacts in the target artifactory
+    repository.'''
+    names = []
+    req = request.Request(url)
+    try:
+        result = request.urlopen(req)
+    except:
+        print(f'Problem accessing URL: {url}')
+    payload = result.readlines()
+    for line in payload:
+        line = str(line.decode())
+        for prefix in artifact_prefixes:
+            if prefix in line:
+                mat = re.search('(?<=").*(?=\")', line)
+                names.append(mat.group(0))
+    return(names)
+
+
+def write_readme(release_tag, config_map, filename):
+    ''' Write a descriptive README.md file customized for this release.'''
+    with open(filename, 'w') as f:
+        f.write(("# Installing the tested pipeline stack\n"
+        "\n"
+        "Conda (miniconda3 or anaconda3) must already be installed, if it is not,\n"
+        "'Advance Setup' below.\n"
+        "All steps must be performed in bash or a compatible shell.\n"
+        "\n" 
+        "A fresh installation of Anaconda3 or Miniconda3 is not required for each JWSTDP\n"
+        "release. The method described here allows for multiple, entirely segregated,\n"
+        "pipeline installations.\n"
+        "\n"))
+
+        for os in config_map:
+            procedure = (f"## {os}\n"
+            f"To reproduce the environment used during JWST prerelease testing on Linux, a \n"
+            f"three-step installation process is required.\n"
+            f"\n"
+            f"1) Install the target python interpreter and its dependencies using conda, then\n"
+            f"```\n"
+            f"$ conda create -n jwstdp-{release_tag} --file\n"
+            f"https://ssb.stsci.edu/releases/jwtdp/{release_tag}/conda_python_{config_map[os]}.txt\n"
+            f"```\n"
+            f"\n"
+            f"2) Activate the environment\n"
+            f"```\n"
+            f"$ source activate jwstdp-{release_tag}\n"
+            f"```\n"
+            f"\n"
+            f"3) Install the pipeline software packages on top using `pip`:\n"
+            f"    ```\n"
+            f"    $ pip install -r\n"
+            f"https://ssb.stsci.edu/releases/jwstdp/{release_tag}/reqs_{config_map[os]}.txt\n"
+            f"    ```\n"
+            f"\n")
+            f.write(procedure)
+
+        f.write("# Advance setup\n"
+        " \n"
+        "If conda has not yet been installed, use the following steps to obtain\n"
+        "it, then use the procedure above to install the pipeline software.\n"
+        "\n"
+        "For detailed instructions of this step, please visit: http://docs.continuum.io/anaconda/install#linux-install\n"
+        "\n"
+        "**For Miniconda:**\n"
+        "\n"
+        "```\n"
+        "$ wget\n"
+        "https://repo.continuum.io/miniconda/Miniconda3-Latest-Linux-x86_64.sh\n"
+        "$ bash Miniconda3-Latest-Linux-x86_64.sh\n"
+        "$ export PATH=$HOME/miniconda3/bin:$PATH\n"
+        "```\n"
+        "\n"
+        "**For Anaconda (if preferred):**\n"
+        "\n"
+        "```\n"
+        "$ wget\n"
+        "https://repo.continuum.io/archive/Anaconda3-2019.10-Linux-x86_64.sh\n"
+        "$ bash Anaconda3-2019.10-Linux-x86_64.sh\n"
+        "$ export PATH=$HOME/anaconda3/bin:$PATH\n"
+        "```\n")
+
+
+def main():
+    ap = argparse.ArgumentParser(
+            prog='jwst_pipeline_deliver',
+            description='Modify regression test environment snapshot artifacts'
+            ' to reflect a stable release tag for all supported OSs, compose '
+            'a descriptive readme file, and commit all files to the '
+            'astroconda-releases repository.')
+    ap.add_argument('--tag',
+                    '-t',
+                    type=str,
+                    required=True,
+                    help='Tag used for the target release of the JWST package.')
+    ap.add_argument('configs',
+                    help='BuildConfig names for which artifacts will be '
+                    'collected',
+                    nargs='+')
+    args = ap.parse_args()
+
+    if len(args.configs) == 0:
+        print('One or more configs are required as argument.')
+        sys.exit(1)
+
+    release_tag = args.tag
+    
+    ## Clone releases repo. 
+    #repo_url_base = 'https://github.com/astroconda/'
+    #repo_name = 'astroconda-releases'
+    #url = f'{repo_url_base}{repo_name}'
+    #cmd = ['git', 'clone', url]
+    #sp.call(cmd)
+    
+    # Crete new release directory
+    scriptdir = sys.path[0]
+    reldir = f'{scriptdir}/../{release_tag}'
+    try:
+        os.mkdir(reldir)
+    except(FileExistsError):
+        print(f'{reldir} already exists. Aborting.')
+        
+    startdir = os.getcwd()
+    os.chdir(reldir)
+ 
+    config_map = {'Linux':'',
+                  'Macos':''}
+    # TODO: Take from config file.
+    art_url_base = 'https://bytesalad.stsci.edu/artifactory'
+    art_repo = 'jwst-pipeline-results'
+
+    artifacts = get_artifact_names(f'{art_url_base}/{art_repo}')
+ 
+    # Download only the available artifacts that correspond to the
+    # requested build configs into new release dir. 
+    for config in args.configs:
+        for artifact in artifacts:
+            for prefix in artifact_prefixes:
+                if artifact == prefix+config+'.txt':
+                    aurl = f'{art_url_base}/{art_repo}/{artifact}'
+                    req = request.Request(aurl)
+                    try:
+                        result = request.urlopen(req)
+                    except:
+                        print(f'Problem accessing URL: {aurl}')
+                    payload = result.readlines()
+
+                    # Determine OS of artifact and map to config name.
+                    if 'linux-64' in str(payload[-1]):
+                        config_map['Linux'] = config
+                    if 'osx-64' in str(payload[-1]):
+                        config_map['Macos'] = config
+
+                    # Replace jwst URL git hash with release tag name
+                    with open(artifact, 'w') as f:
+                        for line in payload:
+                            line = str(line.decode())
+                            line = modify_dep(line, release_tag)
+                            f.write(f'{line}\n')
+
+    write_readme(release_tag, config_map, 'README.md')
+
+if __name__ == '__main__':
+    main()
+
