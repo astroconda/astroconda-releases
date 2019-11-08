@@ -137,13 +137,6 @@ def main():
 
     release_tag = args.tag
     
-    ## Clone releases repo. 
-    #repo_url_base = 'https://github.com/astroconda/'
-    #repo_name = 'astroconda-releases'
-    #url = f'{repo_url_base}{repo_name}'
-    #cmd = ['git', 'clone', url]
-    #sp.call(cmd)
-    
     # Crete new release directory
     scriptdir = sys.path[0]
     reldir = f'{scriptdir}/../{release_tag}'
