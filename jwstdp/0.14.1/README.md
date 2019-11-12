@@ -15,7 +15,7 @@ three-step installation process is required.
 1) Install the target python interpreter and its dependencies using conda, then
 ```
 $ conda create -n jwstdp-0.14.1 --file
-https://ssb.stsci.edu/releases/jwtdp/0.14.1/conda_python_stable-deps.txt
+https://ssb.stsci.edu/releases/jwstdp/0.14.1/conda_python_stable-deps.txt
 ```
 
 2) Activate the environment
@@ -36,7 +36,7 @@ three-step installation process is required.
 1) Install the target python interpreter and its dependencies using conda, then
 ```
 $ conda create -n jwstdp-0.14.1 --file
-https://ssb.stsci.edu/releases/jwtdp/0.14.1/conda_python_macos-stable-deps.txt
+https://ssb.stsci.edu/releases/jwstdp/0.14.1/conda_python_macos-stable-deps.txt
 ```
 
 2) Activate the environment
