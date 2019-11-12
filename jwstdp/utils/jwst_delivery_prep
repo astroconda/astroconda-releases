@@ -74,7 +74,7 @@ def write_readme(release_tag, config_map, filename):
             f"1) Install the target python interpreter and its dependencies using conda, then\n"
             f"```\n"
             f"$ conda create -n jwstdp-{release_tag} --file\n"
-            f"https://ssb.stsci.edu/releases/jwtdp/{release_tag}/conda_python_{config_map[os]}.txt\n"
+            f"https://ssb.stsci.edu/releases/jwstdp/{release_tag}/conda_python_{config_map[os]}.txt\n"
             f"```\n"
             f"\n"
             f"2) Activate the environment\n"
@@ -83,10 +83,9 @@ def write_readme(release_tag, config_map, filename):
             f"```\n"
             f"\n"
             f"3) Install the pipeline software packages on top using `pip`:\n"
-            f"    ```\n"
-            f"    $ pip install -r\n"
-            f"https://ssb.stsci.edu/releases/jwstdp/{release_tag}/reqs_{config_map[os]}.txt\n"
-            f"    ```\n"
+            f"```\n"
+            f"$ pip install -r https://ssb.stsci.edu/releases/jwstdp/{release_tag}/reqs_{config_map[os]}.txt\n"
+            f"```\n"
             f"\n")
             f.write(procedure)
 
