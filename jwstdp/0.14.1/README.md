@@ -25,8 +25,7 @@ $ source activate jwstdp-0.14.1
 
 3) Install the pipeline software packages on top using `pip`:
     ```
-    $ pip install -r
-https://ssb.stsci.edu/releases/jwstdp/0.14.1/reqs_stable-deps.txt
+    $ pip install -r https://ssb.stsci.edu/releases/jwstdp/0.14.1/reqs_stable-deps.txt
     ```
 
 ## Macos
@@ -46,8 +45,7 @@ $ source activate jwstdp-0.14.1
 
 3) Install the pipeline software packages on top using `pip`:
     ```
-    $ pip install -r
-https://ssb.stsci.edu/releases/jwstdp/0.14.1/reqs_macos-stable-deps.txt
+    $ pip install -r https://ssb.stsci.edu/releases/jwstdp/0.14.1/reqs_macos-stable-deps.txt
     ```
 
 # Advance setup
