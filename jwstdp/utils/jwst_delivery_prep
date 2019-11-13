@@ -182,11 +182,9 @@ def main():
 
                     # Determine OS of artifact and map to config name.
                     if 'linux-64' in str(payload[-1]):
-                        #config_map['Linux'] = config
                         cset = confset(config=config, os='Linux')
                         config_map.append(cset)
                     if 'osx-64' in str(payload[-1]):
-                        #config_map['Macos'] = config
                         cset = confset(config=config, os='Macos')
                         config_map.append(cset)
 
