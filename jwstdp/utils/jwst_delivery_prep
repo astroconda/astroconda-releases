@@ -12,6 +12,8 @@ import argparse
 import subprocess as sp
 from urllib import request
 import re
+import configparser
+
 
 # TODO: Take from config file.
 artifact_prefixes = ['conda_python_', 'reqs_']
@@ -38,10 +40,7 @@ def get_artifact_names(url):
     repository.'''
     names = []
     req = request.Request(url)
-    try:
-        result = request.urlopen(req)
-    except:
-        print(f'Problem accessing URL: {url}')
+    result = request.urlopen(req)
     payload = result.readlines()
     for line in payload:
         line = str(line.decode())
@@ -66,15 +65,15 @@ def write_readme(release_tag, config_map, filename):
         "pipeline installations.\n"
         "\n"))
 
-        for os in config_map:
-            procedure = (f"## {os}\n"
+        for cset in config_map:
+            procedure = (f"## {cset.os}\n"
             f"To reproduce the environment used during JWST prerelease testing on Linux, a \n"
             f"three-step installation process is required.\n"
             f"\n"
             f"1) Install the target python interpreter and its dependencies using conda, then\n"
             f"```\n"
             f"$ conda create -n jwstdp-{release_tag} --file\n"
-            f"https://ssb.stsci.edu/releases/jwstdp/{release_tag}/conda_python_{config_map[os]}.txt\n"
+            f"https://ssb.stsci.edu/releases/jwstdp/{release_tag}/conda_python_{cset.config}.txt\n"
             f"```\n"
             f"\n"
             f"2) Activate the environment\n"
@@ -84,7 +83,7 @@ def write_readme(release_tag, config_map, filename):
             f"\n"
             f"3) Install the pipeline software packages on top using `pip`:\n"
             f"```\n"
-            f"$ pip install -r https://ssb.stsci.edu/releases/jwstdp/{release_tag}/reqs_{config_map[os]}.txt\n"
+            f"$ pip install -r https://ssb.stsci.edu/releases/jwstdp/{release_tag}/reqs_{cset.config}.txt\n"
             f"```\n"
             f"\n")
             f.write(procedure)
@@ -127,53 +126,69 @@ def main():
                     type=str,
                     required=True,
                     help='Tag used for the target release of the JWST package.')
-    ap.add_argument('configs',
+    ap.add_argument('--config',
+                    '-c',
+                    required=False,
+                    help='Parameters file for configuring the behavior of this'
+                    ' script. If this flag is not used, the default config '
+                    'file name "params.cfg" in the same directory as the '
+                    'script will be read.')
+    ap.add_argument('build_names',
                     help='BuildConfig names for which artifacts will be '
                     'collected',
                     nargs='+')
     args = ap.parse_args()
 
-    if len(args.configs) == 0:
-        print('One or more configs are required as argument.')
+    if len(args.build_names) == 0:
+        print('One or more build names are required as argument.')
         sys.exit(1)
+
+    scriptdir = sys.path[0]
+
+    configfile = args.config
+    if configfile is None:
+        configfile = 'params.cfg'
+
+    config = configparser.ConfigParser()
+    config.read(os.path.join(scriptdir, configfile))
+    artifact_prefixes = config['main']['artifact_prefixes'].split()
+    art_url_base = config['main']['art_url_base']
+    art_repo = config['main']['art_repo']
 
     release_tag = args.tag
     
     # Crete new release directory
-    scriptdir = sys.path[0]
     reldir = f'{scriptdir}/../{release_tag}'
-    try:
-        os.mkdir(reldir)
-    except(FileExistsError):
-        print(f'{reldir} already exists. Aborting.')
+    os.mkdir(reldir)
         
     startdir = os.getcwd()
     os.chdir(reldir)
  
-    config_map = {'Linux':'',
-                  'Macos':''}
-
+    config_map = []
+    from collections import namedtuple
+    confset = namedtuple('confset', ['config', 'os'])
     artifacts = get_artifact_names(f'{art_url_base}/{art_repo}')
  
     # Download only the available artifacts that correspond to the
-    # requested build configs into new release dir. 
-    for config in args.configs:
+    # requested build name into new release dir. 
+    for config in args.build_names:
         for artifact in artifacts:
             for prefix in artifact_prefixes:
                 if artifact == prefix+config+'.txt':
                     aurl = f'{art_url_base}/{art_repo}/{artifact}'
                     req = request.Request(aurl)
-                    try:
-                        result = request.urlopen(req)
-                    except:
-                        print(f'Problem accessing URL: {aurl}')
+                    result = request.urlopen(req)
                     payload = result.readlines()
 
                     # Determine OS of artifact and map to config name.
                     if 'linux-64' in str(payload[-1]):
-                        config_map['Linux'] = config
+                        #config_map['Linux'] = config
+                        cset = confset(config=config, os='Linux')
+                        config_map.append(cset)
                     if 'osx-64' in str(payload[-1]):
-                        config_map['Macos'] = config
+                        #config_map['Macos'] = config
+                        cset = confset(config=config, os='Macos')
+                        config_map.append(cset)
 
                     # Replace jwst URL git hash with release tag name
                     with open(artifact, 'w') as f:
@@ -183,6 +198,10 @@ def main():
                             f.write(f'{line}\n')
 
     write_readme(release_tag, config_map, 'README.md')
+
+    # Display the build_config to OS mappings.
+    for cset in config_map:
+        print(f"{cset.config}:{cset.os}")
 
 if __name__ == '__main__':
     main()
