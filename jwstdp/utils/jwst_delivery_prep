@@ -15,12 +15,6 @@ import re
 import configparser
 
 
-# TODO: Take from config file.
-artifact_prefixes = ['conda_python_', 'reqs_']
-art_url_base = 'https://bytesalad.stsci.edu/artifactory'
-art_repo = 'jwst-pipeline-results'
-
-
 def modify_dep(line, text):
     '''Replace value appearing after the last '@' in the pip
     spec line for the 'jwst' package with the provided text.'''
@@ -197,7 +191,7 @@ def main():
 
     write_readme(release_tag, config_map, 'README.md')
 
-    # Display the build_config to OS mappings.
+    # Output the build_config to OS mappings.
     for cset in config_map:
         print(f"{cset.config}:{cset.os}")
 
