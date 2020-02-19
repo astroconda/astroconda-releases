@@ -143,4 +143,4 @@ https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.5.1/astroconda/osx-64/wfc3tools
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.5.1/astroconda/osx-64/wfpc2tools-1.0.4-py36_0.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.5.1/astroconda/osx-64/costools-1.2.3-py36_0.tar.bz2
 https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.5.1/astroconda/osx-64/stsci.skypac-1.0.4-py36_0.tar.bz2
-https://ssb.stsci.edu/astroconda-tomb/hstdp/2019.5.1/astroconda/osx-64/drizzlepac-3.1.6-py36_0.tar.bz2
+https://ssb.stsci.edu/astroconda/osx-64/drizzlepac-3.1.6-py36_0.tar.bz2
