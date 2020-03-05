@@ -8,7 +8,7 @@ dependencies:
 - certifi=2019.11.28=py36_0
 - cfitsio=3.470=hb7c8383_2
 - fitsverify=4.18=7
-- hstcal=1.0.0=0
+- hstcal=2.3.1=0
 - krb5=1.17.1=h173b8e3_0
 - ld_impl_linux-64=2.33.1=h53a641e_7
 - libcurl=7.68.0=h20c2e04_0
