@@ -20,15 +20,15 @@ and then creating the environment with it.
 ### Install the pipeline environment
 
 ```
-$ curl -O https://ssb.stsci.edu/releases/caldp/darktime_acs/latest-linux.yml
-$ conda env create -n caldp_darktime_acs --file latest-linux.yml
+$ curl -O https://ssb.stsci.edu/releases/caldp/darktime/latest-linux.yml
+$ conda env create -n caldp_darktime --file latest-linux.yml
 ```
 
 
 ### Activate the pipeline environment
 
 ```
-$ source activate caldp_darktime_acs
+$ source activate caldp_darktime
 ```
 
 Each new delivery iteration of the calibration environment will need to be
