@@ -1,5 +1,4 @@
-NOTE: This release continues in using some recently introduced minor changes in installation
-procedures. Please see below for details.
+During testing, the codename of this environment delivery was 'darktime'.
 
 # Installing
 
@@ -20,15 +19,15 @@ and then creating the environment with it.
 ### Install the pipeline environment
 
 ```
-$ curl -O https://ssb.stsci.edu/releases/caldp/darktime/latest-linux.yml
-$ conda env create -n caldp_darktime --file latest-linux.yml
+$ curl -O https://ssb.stsci.edu/releases/caldp/20200421/latest-linux.yml
+$ conda env create -n caldp_20200421 --file latest-linux.yml
 ```
 
 
 ### Activate the pipeline environment
 
 ```
-$ source activate caldp_darktime
+$ source activate caldp_20200421
 ```
 
 Each new delivery iteration of the calibration environment will need to be
