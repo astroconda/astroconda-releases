@@ -1,5 +1,5 @@
 # Installing
-Currently, conda is required to manage installation of the enviornment. A fresh
+Currently, conda is required to manage installation of the environment. A fresh
 installation of Anaconda3 or Miniconda3 is not required for each HCALDP release,
 however.  An existing conda installation may be used. The method described here
 allows for multiple, entirely segregated, pipeline installations.
