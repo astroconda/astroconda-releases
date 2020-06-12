@@ -1,31 +1,25 @@
 # Installing
-Currently, conda is required to manage installation of the environment. A fresh
-installation of Anaconda3 or Miniconda3 is not required for each HCALDP release,
-however.  An existing conda installation may be used. The method described here
-allows for multiple, entirely segregated, pipeline installations.
+Currently, conda is required to manage installation of the environment. A fresh installation of Anaconda3 or Miniconda3is not required for each HCALDP release, however.  An existing conda installation may be used. The method described here
+ allows for multiple, entirely segregated, pipeline installations.
 
 A `bash`-compatible shell is required for all steps below.
 
-Python dependencies are taken directly from PyPI or development repositories as
-needed, so conda's ability to install hybrid conda/pip environments from a YAML
-specification is used. This requires first downloading the specification file
-and then creating the environment with it.
+Python dependencies are taken directly from PyPI or development repositories as needed, so conda's ability to install hybrid conda/pip environments from a YAMLspecification is used. This requires first downloading the specification file and then creating the environment with it.
 
 ## For existing conda installations:
 
 ### Install the pipeline environment
 ```
-$ curl -O https://ssb.stsci.edu/releases/caldp/atodsat/latest-linux.yml
-$ conda env create -n caldp_atodsat --file latest-linux.yml
+$ curl -O https://ssb.stsci.edu/releases/caldp/20200611/latest-linux.yml
+$ conda env create -n caldp_20200611 --file latest-linux.yml
 ```
 ### Activate the pipeline environment
 
 ```
-$ source activate caldp_atodsat
+$ source activate caldp_20200611
 ```
 
-Each new delivery iteration of the calibration environment will need to be
-installed using the above commands.
+Each new delivery iteration of the calibration environmentwill need to be installed using the above commands.
 
 ------
 
