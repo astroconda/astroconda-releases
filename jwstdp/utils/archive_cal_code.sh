@@ -56,7 +56,8 @@ git clone https://github.com/stsci-jwst/jwst.git $local_checkout_dir
 pushd $local_checkout_dir
 git checkout $tag
 
-# Create the 
+# Create the line count summary. Strip off any superfluous leading text to
+# leave only the report data itself.
 countname="jwst-${tag}-sloccount.txt"
 sloccount . > temp.txt 2>&1
 csplit --digits=0 --prefix $countname temp.txt %SLOC%
