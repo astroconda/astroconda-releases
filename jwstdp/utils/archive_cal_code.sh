@@ -42,11 +42,13 @@ which sloccount
 if [[ $? -ne 0 ]];
 then
     echo "'sloccount' not found. Install before attempting again."
+    exit 1
 fi
 which csplit 
 if [[ $? -ne 0 ]];
 then
     echo "'csplit' not found. Install before attempting again."
+    exit 1
 fi
 
 set -e
