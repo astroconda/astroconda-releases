@@ -1,7 +1,7 @@
 # delivery_name: CALDP_errorcalc_COS_rc1
 # creation_time: Wed Sep 16 14:27:47 2020
 # conda_version: 4.8.2
-# condabuild_version: 4.8.2
+# condabuild_version: 3.18.11
 channels:
 - defaults
 - https://ssb.stsci.edu/astroconda
