@@ -1,3 +1,6 @@
+## 2020/12/3 - CALDP_initialSVM_DRZ_rc5
+### drizzlepac 3.2.0rc5
+
 ## 2020/12/2 - CALDP_initialSVM_DRZ_rc4
 ### drizzlepac 3.2.0rc4
 
