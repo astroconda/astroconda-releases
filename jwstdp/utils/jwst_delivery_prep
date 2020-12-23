@@ -15,7 +15,7 @@ import re
 import configparser
 
 
-def modify_dep(line, text):
+def modify_dep(line, text, jwstpip=True):
     '''Replace value appearing after the last '@' in the pip
     spec line for the 'jwst' package with the provided text.'''
     line = line.strip()
@@ -23,9 +23,12 @@ def modify_dep(line, text):
     if line[0:2] == '-e':
         print('editable install dependency spec')
     if line[0:4] == 'jwst':
-        delim = line.rfind('@')
-        line = line[:delim+1]
-        line = line + text
+        if jwstpip:
+            line = f'jwst=={text}'
+        else:
+            delim = line.rfind('@')
+            line = line[:delim+1]
+            line = line + text
     return(line)
 
 
