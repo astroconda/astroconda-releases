@@ -9,6 +9,7 @@ channels:
 dependencies:
 - python=3.6.13=hdb3f193_0
 - hstcal=2.7.2.dev0+gd395b8b8=0
+- pip=21.0.1=py36h06a4308_1
 - pip:
   - acstools==3.3.1
   - astropy==4.1
