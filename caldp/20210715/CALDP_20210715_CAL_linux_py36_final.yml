@@ -8,6 +8,7 @@ channels:
 - https://ssb.stsci.edu/astroconda-staging
 dependencies:
 - python=3.6.13=hdb3f193_0
+- hstcal=2.7.2.dev0+gd395b8b8=0
 - pip:
   - acstools==3.3.1
   - astropy==4.1
@@ -73,7 +74,7 @@ dependencies:
   - threadpoolctl==2.1.0
   - tifffile==2020.9.3
   - tornado==6.1
-  - tweakwcs==0.7.1
+  - tweakwcs==0.7.2
   - typing-extensions==3.10.0.0
   - urllib3==1.26.4
   - webencodings==0.5.1
