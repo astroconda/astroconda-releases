@@ -1,3 +1,9 @@
+## 2021/11/4 - CALDP_drizzlecats_CAL_rc6
+### hstcal 2.7.2
+### drizzlepac 3.3.1rc6
+### stwcs 1.7.1
+### tweakwcs 0.7.3
+
 ## 2021/10/20 - CALDP_drizzlecats_CAL_rc5
 ### hstcal 2.7.2
 ### drizzlepac 3.3.1rc5
