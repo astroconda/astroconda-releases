@@ -1,0 +1,107 @@
+# delivery_name: CALDP_stwcsfix_CAL_rc1
+# creation_time: Mon Nov 29 14:30:50 2021
+# conda_version: 4.10.3
+# condabuild_version: 3.18.11
+channels:
+- defaults
+- https://ssb.stsci.edu/astroconda
+- https://ssb.stsci.edu/astroconda-staging
+dependencies:
+- bzip2=1.0.8=h1de35cc_0
+- ca-certificates=2021.10.26=hecd8cb5_2
+- certifi=2021.10.8=py38hecd8cb5_0
+- cfitsio=3.470=1
+- fitsverify=4.18=13
+- hstcal=2.7.2.dev0+gd395b8b8=0
+- libcxx=12.0.0=h2f01273_0
+- libffi=3.3=hb1e8313_2
+- libgcc=4.8.5=hdbeacc1_10
+- libgfortran=3.0.1=h93005f0_2
+- ncurses=6.3=hca72f7f_2
+- openssl=1.1.1l=h9ed2024_0
+- pip=21.2.4=py38hecd8cb5_0
+- python=3.8.12=h88f2d9e_0
+- readline=8.1=h9ed2024_0
+- setuptools=58.0.4=py38hecd8cb5_0
+- sqlite=3.36.0=hce871da_0
+- tk=8.6.11=h7bc2e8c_0
+- wheel=0.37.0=pyhd3eb1b0_1
+- xz=5.2.5=h1de35cc_0
+- zlib=1.2.11=h1de35cc_3
+- pip:
+  - acstools==3.3.1
+  - asdf==2.8.1
+  - astropy==5.0
+  - astroquery==0.4.4
+  - attrs==21.2.0
+  - beautifulsoup4==4.10.0
+  - bokeh==2.4.2
+  - calcos==3.3.11
+  - charset-normalizer==2.0.8
+  - costools==1.2.4
+  - crds==11.5.0
+  - cycler==0.11.0
+  - git+https://github.com/spacetelescope/drizzlepac@3.3.1
+  - filelock==3.4.0
+  - fitsblender==0.3.6
+  - fonttools==4.28.2
+  - html5lib==1.1
+  - idna==3.3
+  - imageio==2.13.0
+  - importlib-metadata==4.8.2
+  - importlib-resources==5.4.0
+  - jinja2==3.0.3
+  - jmespath==0.10.0
+  - joblib==1.1.0
+  - jsonschema==3.2.0
+  - keyring==23.4.0
+  - kiwisolver==1.3.2
+  - lxml==4.6.4
+  - markupsafe==2.0.1
+  - matplotlib==3.5.0
+  - mimeparse==0.1.3
+  - networkx==2.6.3
+  - nictools==1.1.5
+  - numpy==1.21.4
+  - packaging==21.3
+  - pandas==1.3.4
+  - parsley==1.3
+  - photutils==1.1.0
+  - pillow==8.4.0
+  - pyerfa==2.0.0.1
+  - pyparsing==3.0.6
+  - pypdf2==1.26.0
+  - pyrsistent==0.18.0
+  - python-dateutil==2.8.2
+  - pytz==2021.3
+  - pyvo==1.1
+  - pywavelets==1.2.0
+  - pyyaml==6.0
+  - requests==2.26.0
+  - scikit-image==0.18.3
+  - scikit-learn==1.0.1
+  - scipy==1.7.3
+  - semantic-version==2.8.5
+  - setuptools-scm==6.3.2
+  - six==1.16.0
+  - soupsieve==2.3.1
+  - spherical-geometry==1.2.20
+  - stistools==1.4.1
+  - stregion==1.1.6
+  - stsci-image==2.3.5
+  - stsci-imagestats==1.6.3
+  - stsci-skypac==1.0.8
+  - stsci-stimage==0.2.5
+  - stsci-tools==4.0.1
+  - stwcs==1.7.2
+  - threadpoolctl==3.0.0
+  - tifffile==2021.11.2
+  - tomli==1.2.2
+  - tornado==6.1
+  - tweakwcs==0.7.3
+  - typing-extensions==4.0.0
+  - urllib3==1.26.7
+  - webencodings==0.5.1
+  - wfc3tools==1.3.5
+  - wfpc2tools==1.0.5
+  - zipp==3.6.0
