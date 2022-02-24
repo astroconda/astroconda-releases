@@ -5,7 +5,6 @@
 channels:
   - https://ssb.stsci.edu/astroconda-staging
   - https://ssb.stsci.edu/astroconda
-  - http://ssb.stsci.edu/astroconda
   - defaults
 dependencies:
   - bzip2=1.0.8=h1de35cc_0

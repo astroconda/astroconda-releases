@@ -6,8 +6,6 @@ channels:
   - https://ssb.stsci.edu/astroconda-staging
   - https://ssb.stsci.edu/astroconda
   - conda-forge
-  - http://ssb.stsci.edu/astroconda
-  - stsci
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
