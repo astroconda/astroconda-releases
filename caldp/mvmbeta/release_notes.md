@@ -1,3 +1,10 @@
+## 2022/3/17 - CALDP_mvmbeta_CAL_rc3
+### hstcal 2.7.4rc1
+### calcos 3.4.0
+### drizzlepac 3.4.1rc4
+### stwcs 1.7.2
+### tweakwcs 0.7.3
+
 ## 2022/3/14 - CALDP_mvmbeta_CAL_rc2
 ### hstcal 2.7.4rc1
 ### calcos 3.4.0
