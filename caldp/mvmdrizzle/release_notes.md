@@ -1,3 +1,9 @@
+## 2022/9/28 - CALDP_mvmdrizzle_CAL_rc3
+### drizzlepac 3.5.0rc2
+### fitsblender 0.4.2
+### stwcs 1.7.2
+### tweakwcs 0.8.0
+
 ## 2022/9/9 - CALDP_mvmdrizzle_CAL_rc3
 ### drizzlepac 3.5.0rc1
 ### fitsblender 0.4.3
