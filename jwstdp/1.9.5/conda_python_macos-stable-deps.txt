@@ -1,0 +1,19 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-64
+@EXPLICIT
+https://conda.anaconda.org/conda-forge/osx-64/bzip2-1.0.8-h0d85af4_4.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/ca-certificates-2022.12.7-h033912b_0.conda
+https://conda.anaconda.org/conda-forge/osx-64/libffi-3.4.2-h0d85af4_5.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/libzlib-1.2.13-hfd90126_4.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/ncurses-6.3-h96cf925_1.tar.bz2
+https://conda.anaconda.org/conda-forge/noarch/tzdata-2022g-h191b570_0.conda
+https://conda.anaconda.org/conda-forge/osx-64/xz-5.2.6-h775f41a_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/libsqlite-3.40.0-ha978bb4_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/openssl-3.0.8-hfd90126_0.conda
+https://conda.anaconda.org/conda-forge/osx-64/readline-8.1.2-h3899abd_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/tk-8.6.12-h5dbffcc_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/python-3.9.16-h709bd14_0_cpython.conda
+https://conda.anaconda.org/conda-forge/noarch/setuptools-67.4.0-pyhd8ed1ab_0.conda
+https://conda.anaconda.org/conda-forge/noarch/wheel-0.38.4-pyhd8ed1ab_0.tar.bz2
+https://conda.anaconda.org/conda-forge/noarch/pip-23.0.1-pyhd8ed1ab_0.conda
