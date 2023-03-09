@@ -29,6 +29,7 @@ importlib-metadata==6.0.0
 iniconfig==2.0.0
 jmespath==1.0.1
 jsonschema==4.17.3
+jwst @ git+https://github.com/spacetelescope/jwst@7cce57f961d4e980543244cfdbf9e30cf0f864d8#egg=jwst
 kiwisolver==1.4.4
 lxml==4.9.2
 matplotlib==3.6.3
