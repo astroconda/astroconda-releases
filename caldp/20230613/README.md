@@ -10,13 +10,13 @@ Python dependencies are taken directly from PyPI or development repositories as 
 
 ### Install the pipeline environment
 ```
-$ curl -O https://ssb.stsci.edu/releases/caldp/onlywfpc2drizzle/latest-linux.yml
-$ conda env create -n caldp_onlywfpc2drizzle --file latest-linux.yml
+$ curl -O https://ssb.stsci.edu/releases/caldp/20230613/latest-linux.yml
+$ conda env create -n caldp_20230613 --file latest-linux.yml
 ```
 ### Activate the pipeline environment
 
 ```
-$ source activate caldp_onlywfpc2drizzle
+$ source activate caldp_20230613
 ```
 
 Each new delivery iteration of the calibration environmentwill need to be installed using the above commands.
