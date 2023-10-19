@@ -3,7 +3,7 @@ asdf==2.15.2
 asdf-astropy==0.4.0
 asdf-coordinates-schemas==0.2.0
 asdf-standard==1.0.3
-asdf-transform-schemas @ git+https://github.com/asdf-format/asdf-transform-schemas.git@b70466db1686ca7db4b1b606da673de209145056
+asdf-transform-schemas==0.3.0
 asdf-unit-schemas==0.1.0
 asdf-wcs-schemas==0.2.0
 astropy==5.3.4
@@ -16,7 +16,7 @@ ci-watson==0.6.2
 colorama==0.4.6
 contourpy==1.1.1
 coverage==7.3.2
-crds @ git+https://github.com/spacetelescope/crds@e47e9709353540f95ff0641423390d6147777afc
+crds==11.17.6
 cycler==0.12.1
 docutils==0.20.1
 drizzle==1.14.3
@@ -25,7 +25,7 @@ execnet==2.0.2
 filelock==3.12.4
 fonttools==4.43.1
 future==0.18.3
-gwcs @ git+https://github.com/spacetelescope/gwcs@8117b3c7daa0a0ba5e67a23c58df55f5515e53bd
+gwcs==0.19.0
 idna==3.4
 imagesize==1.4.1
 importlib-metadata==6.8.0
@@ -79,14 +79,14 @@ sphinxcontrib-htmlhelp==2.0.4
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml==1.1.9
-stcal @ git+https://github.com/spacetelescope/stcal@2251433b6ccd56ccf806b6655ba23f9deab24629
-stdatamodels @ git+https://github.com/spacetelescope/stdatamodels@15e5ae69d75658138960ecafac59115aad376eb6
-stpipe @ git+https://github.com/spacetelescope/stpipe@5369e85b35c99280cd578b05c50f40f3ccb70d7f
+stcal==1.4.4
+stdatamodels==1.8.3
+stpipe==0.5.0
 stsci.image==2.3.5
 stsci.imagestats==1.6.3
 stsci.stimage==0.2.6
 tabulate==0.9.0
-tweakwcs @ git+https://github.com/spacetelescope/tweakwcs@c98e703263872ff80dbbfd7aeff16983e2f4d282
+tweakwcs==0.8.3
 urllib3==2.0.7
-wiimatch @ git+https://github.com/spacetelescope/wiimatch@59b36c395de708d5576ae3ec07805f4f2c7f3dff
+wiimatch==0.3.1
 zipp==3.17.0
