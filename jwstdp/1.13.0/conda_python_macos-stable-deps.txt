@@ -1,0 +1,20 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-64
+# conda version: 22.11.1
+@EXPLICIT
+https://repo.anaconda.com/pkgs/main/osx-64/bzip2-1.0.8-h1de35cc_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/ca-certificates-2023.08.22-hecd8cb5_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/libffi-3.4.4-hecd8cb5_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/ncurses-6.4-hcec6c5f_0.conda
+https://repo.anaconda.com/pkgs/main/noarch/tzdata-2023c-h04d1e81_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/xz-5.4.5-h6c40b1e_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/zlib-1.2.13-h4dc903c_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/openssl-3.0.12-hca72f7f_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/readline-8.2-hca72f7f_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/tk-8.6.12-h5d9f67b_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/sqlite-3.41.2-h6c40b1e_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/python-3.11.5-hf27a42d_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/setuptools-68.0.0-py311hecd8cb5_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/wheel-0.41.2-py311hecd8cb5_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/pip-23.3.1-py311hecd8cb5_0.conda
