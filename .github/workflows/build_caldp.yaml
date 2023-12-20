@@ -1,0 +1,39 @@
+name: build CALDP
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: CALDP release
+        type: string
+        required: true
+  workflow_call:
+    inputs:
+      release:
+        description: CALDP release
+        type: string
+        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_caldp:
+    name: build CALDP (${{ matrix.runs-on }})
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      matrix:
+        runs-on: [ ubuntu-latest, macos-latest ]
+    defaults:
+      run:
+        shell: micromamba-shell {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-name: caldp-${{ runner.os }}
+          environment-file: caldp/${{ inputs.release }}/CALDP_${{ inputs.release }}_CAL_${{ runner.os == 'Linux' && 'linux' || 'macos' }}_py39_final.yml
+          init-shell: none
+          generate-run-shell: true
+      - run: pip list
