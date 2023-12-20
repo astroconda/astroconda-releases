@@ -1,0 +1,40 @@
+name: build JWSTDP
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: JWSTDP release
+        type: string
+        required: true
+  workflow_call:
+    inputs:
+      release:
+        description: JWSTDP release
+        type: string
+        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_jwstdp:
+    name: build JWSTDP (${{ matrix.runs-on }})
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      matrix:
+        runs-on: [ ubuntu-latest, macos-latest ]
+    defaults:
+      run:
+        shell: micromamba-shell {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-name: jwstdp-${{ runner.os }}
+          environment-file: jwstdp/${{ inputs.release }}/conda_python_${{ runner.os == 'macOS' && 'macos-' || '' }}stable-deps.txt
+          init-shell: none
+          generate-run-shell: true
+      - run: pip install -r jwstdp/${{ inputs.release }}/reqs_${{ runner.os == 'macOS' && 'macos-' || '' }}stable-deps.txt
+      - run: pip list
