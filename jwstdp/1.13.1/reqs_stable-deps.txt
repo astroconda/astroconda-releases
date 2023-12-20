@@ -86,7 +86,7 @@ sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml==1.1.9
 stcal==1.5.2
 stdatamodels==1.9.0
-stpipe==0.5.2
+stpipe==0.5.1
 stsci.image==2.3.5
 stsci.imagestats==1.8.0
 stsci.stimage==0.2.6
