@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   release:
-    name: find latest JWSTDP release
+    name: name of release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
