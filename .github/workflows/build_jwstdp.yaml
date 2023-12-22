@@ -26,6 +26,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: release
         run: echo "latest=$(ls -1 jwstdp | sort -t "." -k1,1n -k2,2n -k3,3n | tail -n1)" >> $GITHUB_OUTPUT
+      - run: echo ${{ steps.release.outputs.latest }}
     outputs:
       release: ${{ steps.release.outputs.latest }}
   build:
