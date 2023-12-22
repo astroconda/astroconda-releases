@@ -33,7 +33,7 @@ jobs:
       - uses: mamba-org/setup-micromamba@v1
         with:
           environment-name: caldp-${{ runner.os }}
-          environment-file: caldp/${{ inputs.release || "latest" }}/latest-${{ runner.os == 'Linux' && 'linux' || 'macos' }}.yml
+          environment-file: caldp/${{ inputs.release || 'latest' }}/latest-${{ runner.os == 'Linux' && 'linux' || 'macos' }}.yml
           init-shell: none
           generate-run-shell: true
       - run: pip list
