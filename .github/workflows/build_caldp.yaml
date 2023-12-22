@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   build:
-    name: build CALDP (${{ matrix.runs-on }})
+    name: build CALDP `${{ inputs.release || 'latest' }}` (${{ matrix.runs-on }})
     runs-on: ${{ matrix.runs-on }}
     strategy:
       matrix:

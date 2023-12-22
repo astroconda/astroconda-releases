@@ -24,14 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - id: release
-        run: echo "latest=$(ls -1 jwstdp | sort -t "." -k1,1n -k2,2n -k3,3n | tail -n1)" >> $GITHUB_OUTPUT
-      - run: echo ${{ steps.release.outputs.latest }}
+      - id: latest
+        run: echo "release=$(ls -1 jwstdp | sort -t "." -k1,1n -k2,2n -k3,3n | tail -n1)" >> $GITHUB_OUTPUT
+      - run: echo ${{ steps.latest.outputs.release }}
     outputs:
-      release: ${{ steps.release.outputs.latest }}
+      release: ${{ steps.latest.outputs.release }}
   build:
     needs: [ latest ]
-    name: build JWSTDP (${{ matrix.runs-on }})
+    name: build JWSTDP `${{ inputs.release || needs.latest.outputs.release }}` (${{ matrix.runs-on }})
     runs-on: ${{ matrix.runs-on }}
     strategy:
       matrix:
