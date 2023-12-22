@@ -19,8 +19,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  release:
+    name: name of release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: release
+        run: echo "release=$(basename $(readlink -f caldp/${{ inputs.release || 'latest' }}))" >> $GITHUB_OUTPUT
+      - run: echo "release=${{ steps.release.outputs.release }}"
   build:
-    name: build CALDP `${{ inputs.release || 'latest' }}` (${{ matrix.runs-on }})
+    needs: [ release ]
+    name: build CALDP `${{ needs.release.outputs.release }}` (${{ matrix.runs-on }})
     runs-on: ${{ matrix.runs-on }}
     strategy:
       matrix:
@@ -33,7 +42,7 @@ jobs:
       - uses: mamba-org/setup-micromamba@v1
         with:
           environment-name: caldp-${{ runner.os }}
-          environment-file: caldp/${{ inputs.release || 'latest' }}/latest-${{ runner.os == 'Linux' && 'linux' || 'macos' }}.yml
+          environment-file: caldp/${{ needs.release.outputs.release }}/latest-${{ runner.os == 'Linux' && 'linux' || 'macos' }}.yml
           init-shell: none
           generate-run-shell: true
       - run: pip list
