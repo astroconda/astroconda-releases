@@ -27,6 +27,8 @@ jobs:
       - id: release
         run: echo "release=$(basename $(readlink -f caldp/${{ inputs.release || 'latest' }}))" >> $GITHUB_OUTPUT
       - run: echo "release=${{ steps.release.outputs.release }}"
+    outputs:
+      release: ${{ steps.release.outputs.release }}
   build:
     needs: [ release ]
     name: build CALDP `${{ needs.release.outputs.release }}` (${{ matrix.runs-on }})
