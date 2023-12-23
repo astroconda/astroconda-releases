@@ -1,0 +1,56 @@
+name: build JWSTDP
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - jwstdp/**
+  pull_request:
+    paths:
+      - jwstdp/**
+  workflow_dispatch:
+    inputs:
+      release:
+        description: JWSTDP release
+        type: string
+        required: false
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ inputs.release }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    name: name of release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: latest
+        run: echo "latest=$(ls -1 jwstdp | sort -t "." -k1,1n -k2,2n -k3,3n | tail -n1)" >> $GITHUB_OUTPUT
+      - run: echo "latest=${{ steps.latest.outputs.latest }}"
+      - id: release
+        run: echo "release=${{ inputs.release || steps.latest.outputs.latest }}" >> $GITHUB_OUTPUT
+      - run: echo "release=${{ steps.release.outputs.release }}"
+    outputs:
+      release: ${{ steps.release.outputs.release }}
+  build:
+    needs: [ release ]
+    name: build JWSTDP `${{ needs.release.outputs.release }}` (${{ matrix.runs-on }})
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      matrix:
+        runs-on: [ ubuntu-latest, macos-latest ]
+    defaults:
+      run:
+        shell: micromamba-shell {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-name: jwstdp-${{ runner.os }}
+          environment-file: jwstdp/${{ needs.release.outputs.release }}/conda_python_${{ runner.os == 'macOS' && 'macos-' || '' }}stable-deps.txt
+          init-shell: none
+          generate-run-shell: true
+      - run: pip install -r jwstdp/${{ needs.release.outputs.release }}/reqs_${{ runner.os == 'macOS' && 'macos-' || '' }}stable-deps.txt
+      - run: pip list

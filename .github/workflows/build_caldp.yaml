@@ -1,0 +1,52 @@
+name: build CALDP
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - caldp/**
+  pull_request:
+    paths:
+      - caldp/**
+  workflow_dispatch:
+    inputs:
+      release:
+        description: CALDP release (can also be `latest`, `stable`)
+        type: string
+        required: false
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ inputs.release }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    name: name of release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: release
+        run: echo "release=$(basename $(readlink -f caldp/${{ inputs.release || 'latest' }}))" >> $GITHUB_OUTPUT
+      - run: echo "release=${{ steps.release.outputs.release }}"
+    outputs:
+      release: ${{ steps.release.outputs.release }}
+  build:
+    needs: [ release ]
+    name: build CALDP `${{ needs.release.outputs.release }}` (${{ matrix.runs-on }})
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      matrix:
+        runs-on: [ ubuntu-latest, macos-latest ]
+    defaults:
+      run:
+        shell: micromamba-shell {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-name: caldp-${{ runner.os }}
+          environment-file: caldp/${{ needs.release.outputs.release }}/latest-${{ runner.os == 'Linux' && 'linux' || 'macos' }}.yml
+          init-shell: none
+          generate-run-shell: true
+      - run: pip list
