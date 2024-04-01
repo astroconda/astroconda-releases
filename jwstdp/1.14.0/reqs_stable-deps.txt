@@ -13,7 +13,7 @@ Babel==2.14.0
 BayesicFitting==3.2.1
 certifi==2024.2.2
 charset-normalizer==3.3.2
-ci-watson==0.6.2
+ci_watson==0.6.2
 colorama==0.4.6
 contourpy==1.2.0
 coverage==7.4.4

@@ -12,7 +12,6 @@ https://repo.anaconda.com/pkgs/main/linux-64/libgomp-11.2.0-h1234567_1.conda
 https://repo.anaconda.com/pkgs/main/linux-64/_openmp_mutex-5.1-1_gnu.conda
 https://repo.anaconda.com/pkgs/main/linux-64/libgcc-ng-11.2.0-h1234567_1.conda
 https://repo.anaconda.com/pkgs/main/linux-64/bzip2-1.0.8-h5eee18b_5.conda
-https://repo.anaconda.com/pkgs/main/linux-64/expat-2.5.0-h6a678d5_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/libffi-3.4.4-h6a678d5_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/libuuid-1.41.5-h5eee18b_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/ncurses-6.4-h6a678d5_0.conda
@@ -22,7 +21,7 @@ https://repo.anaconda.com/pkgs/main/linux-64/zlib-1.2.13-h5eee18b_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/readline-8.2-h5eee18b_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/tk-8.6.12-h1ccaba5_0.conda
 https://repo.anaconda.com/pkgs/main/linux-64/sqlite-3.41.2-h5eee18b_0.conda
-https://repo.anaconda.com/pkgs/main/linux-64/python-3.12.2-h996f2a0_0.conda
-https://repo.anaconda.com/pkgs/main/linux-64/setuptools-68.2.2-py312h06a4308_0.conda
-https://repo.anaconda.com/pkgs/main/linux-64/wheel-0.41.2-py312h06a4308_0.conda
-https://repo.anaconda.com/pkgs/main/linux-64/pip-23.3.1-py312h06a4308_0.conda
+https://repo.anaconda.com/pkgs/main/linux-64/python-3.11.8-h955ad1f_0.conda
+https://repo.anaconda.com/pkgs/main/linux-64/setuptools-68.2.2-py311h06a4308_0.conda
+https://repo.anaconda.com/pkgs/main/linux-64/wheel-0.41.2-py311h06a4308_0.conda
+https://repo.anaconda.com/pkgs/main/linux-64/pip-23.3.1-py311h06a4308_0.conda
