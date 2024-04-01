@@ -36,6 +36,7 @@ jmespath==1.0.1
 jplephem==2.21
 jsonschema==4.21.1
 jsonschema-specifications==2023.12.1
+jwst @ git+https://github.com/spacetelescope/jwst.git@1.14.0
 kiwisolver==1.4.5
 lazy_loader==0.3
 lxml==5.1.1
