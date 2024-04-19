@@ -1,3 +1,6 @@
+## 2024/4/19 - CALDP_infrastructure_CAL_rc7
+### drizzlepac 3.7.0rc4
+
 ## 2024/4/2 - CALDP_infrastructure_CAL_rc6
 ### drizzlepac 3.7.0rc4
 
