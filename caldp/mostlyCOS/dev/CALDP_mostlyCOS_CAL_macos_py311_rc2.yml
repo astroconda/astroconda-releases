@@ -1,0 +1,157 @@
+# delivery_name: CALDP_mostlyCOS_CAL_rc2
+# creation_time: Sun Jun 30 13:20:11 2024
+# conda_version: 4.12.0
+# condabuild_version: 3.18.11
+channels:
+- conda-forge
+dependencies:
+- bzip2=1.0.8=h10d778d_5
+- c-ares=1.28.1=h10d778d_0
+- ca-certificates=2024.6.2=h8857fd0_0
+- cfitsio=4.4.0=h60fb419_1
+- fitsverify=4.22=h4236e88_1
+- hstcal=3.0.1=h61206a2_0
+- krb5=1.21.3=h37d8d59_0
+- libcurl=8.8.0=hf9fcc65_1
+- libcxx=17.0.6=h88467a6_0
+- libedit=3.1.20191231=h0678c8f_2
+- libev=4.33=h10d778d_2
+- libexpat=2.6.2=h73e2aa4_0
+- libffi=3.4.2=h0d85af4_5
+- libgfortran=5.0.0=13_2_0_h97931a8_3
+- libgfortran5=13.2.0=h2873a65_3
+- libnghttp2=1.58.0=h64cf6d3_1
+- libsqlite=3.46.0=h1b8f9f3_0
+- libssh2=1.11.0=hd019ec5_0
+- libzlib=1.3.1=h87427d6_1
+- llvm-openmp=18.1.8=h15ab845_0
+- ncurses=6.5=h5846eda_0
+- openssl=3.3.1=h87427d6_1
+- pip=24.0=pyhd8ed1ab_0
+- python=3.11.9=h657bba9_0_cpython
+- readline=8.2=h9e318b2_1
+- setuptools=70.1.1=pyhd8ed1ab_0
+- tk=8.6.13=h1abcd95_1
+- wheel=0.43.0=pyhd8ed1ab_1
+- xz=5.2.6=h775f41a_0
+- zstd=1.5.6=h915ae27_0
+- pip:
+  - acstools==3.7.1
+  - alabaster==0.7.16
+  - asdf==3.2.0
+  - asdf-astropy==0.6.1
+  - asdf-coordinates-schemas==0.3.0
+  - asdf-standard==1.1.1
+  - asdf-transform-schemas==0.5.0
+  - asdf-wcs-schemas==0.4.0
+  - astrocut==0.9
+  - astropy==6.1.0
+  - astropy-iers-data==0.2024.6.10.0.30.47
+  - astroquery==0.4.7
+  - attrs==23.2.0
+  - babel==2.15.0
+  - backports-tarfile==1.2.0
+  - beautifulsoup4==4.12.3
+  - blosc2==2.6.2
+  - bokeh==3.4.1
+  - git+https://github.com/spacetelescope/calcos@3.5.1
+  - certifi==2024.6.2
+  - charset-normalizer==3.3.2
+  - contourpy==1.2.1
+  - costools==1.2.6
+  - crds==11.17.25
+  - cycler==0.12.1
+  - cython==3.0.10
+  - datetime==5.5
+  - docutils==0.21.2
+  - git+https://github.com/spacetelescope/drizzlepac@3.7.1rc5
+  - et-xmlfile==1.1.0
+  - filelock==3.15.1
+  - fitsblender==0.4.4
+  - fonttools==4.53.0
+  - gwcs==0.21.0
+  - hasp==1.0
+  - html5lib==1.1
+  - idna==3.7
+  - imageio==2.34.1
+  - imagesize==1.4.1
+  - importlib-metadata==7.1.0
+  - jaraco-classes==3.4.0
+  - jaraco-context==5.3.0
+  - jaraco-functools==4.0.1
+  - jinja2==3.1.4
+  - jmespath==1.0.1
+  - joblib==1.4.2
+  - keyring==25.2.1
+  - kiwisolver==1.4.5
+  - lazy-loader==0.4
+  - lxml==5.2.2
+  - markupsafe==2.0.1
+  - matplotlib==3.9.0
+  - more-itertools==10.3.0
+  - msgpack==1.0.8
+  - ndindex==1.8
+  - networkx==3.3
+  - nictools==1.1.5
+  - numexpr==2.10.0
+  - numpy==1.26.4
+  - numpydoc==1.7.0
+  - openpyxl==3.1.4
+  - packaging==24.1
+  - pandas==2.2.2
+  - parsley==1.3
+  - photutils==1.12.0
+  - pillow==10.3.0
+  - plotly==5.22.0
+  - py-cpuinfo==9.0.0
+  - pyerfa==2.0.1.4
+  - pygments==2.18.0
+  - pyparsing==3.1.2
+  - pypdf2==3.0.1
+  - pysiaf==0.22.0
+  - python-dateutil==2.9.0.post0
+  - pytz==2024.1
+  - pyvo==1.5.2
+  - pyyaml==6.0.1
+  - requests==2.32.3
+  - scikit-image==0.23.2
+  - scikit-learn==1.5.0
+  - scipy==1.13.1
+  - semantic-version==2.10.0
+  - six==1.16.0
+  - snowballstemmer==2.2.0
+  - soupsieve==2.5
+  - spherical-geometry==1.3.2
+  - sphinx==7.3.7
+  - sphinxcontrib-applehelp==1.0.8
+  - sphinxcontrib-devhelp==1.0.6
+  - sphinxcontrib-htmlhelp==2.0.5
+  - sphinxcontrib-jsmath==1.0.1
+  - sphinxcontrib-qthelp==1.0.7
+  - sphinxcontrib-serializinghtml==1.1.10
+  - stistools==1.4.4
+  - stregion==1.1.8
+  - stsci-image==2.3.9
+  - stsci-imagestats==1.8.3
+  - stsci-skypac==1.0.10
+  - stsci-stimage==0.2.9
+  - stsci-tools==4.1.0
+  - stwcs==1.7.3
+  - tables==3.9.2
+  - tabulate==0.9.0
+  - tenacity==8.3.0
+  - threadpoolctl==3.5.0
+  - tifffile==2024.5.22
+  - tornado==6.4.1
+  - tweakwcs==0.8.7
+  - typing-extensions==4.12.2
+  - tzdata==2024.1
+  - ullyses==4.1.0
+  - ullyses-utils==3.1.0
+  - urllib3==2.2.1
+  - webencodings==0.5.1
+  - wfc3tools==1.5.0
+  - wfpc2tools==1.0.5
+  - xyzservices==2024.6.0
+  - zipp==3.19.2
+  - zope-interface==6.4.post2
