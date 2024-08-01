@@ -1,3 +1,7 @@
+## 2024/7/31 - CALDP_mostlyCOS_CAL_rc5
+### calcos 3.5.1
+### drizzlepac 3.7.1rc8
+
 ## 2024/7/29 - CALDP_mostlyCOS_CAL_rc4
 ### calcos 3.5.1
 ### drizzlepac 3.7.1rc7
